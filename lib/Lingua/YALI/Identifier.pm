@@ -3,6 +3,8 @@ package Lingua::YALI::Identifier;
 use strict;
 use warnings;
 use Moose;
+use Carp;
+use PerlIO::gzip;
 
 # ABSTRACT: Returns information about languages.
 
@@ -32,15 +34,19 @@ sub add_class
     if ( defined( $self->{_model_file}->{$class} ) ) {
         return 0;
     }
+    
+    if ( ! defined($file) ) {
+        croak("Model has to be specified.");
+    }
 
-    if ( !-r $file ) {
+    if ( ! -r $file ) {
         croak("Model $file is not readable.");
     }
 
+    $self->_load_model($class, $file);
+
     $self->{_model_file}->{$class} = $file;
-
-    $self->_load_model($class);
-
+    
     return 1;
 }
 
@@ -95,6 +101,10 @@ sub identify_handler
 
 #    my $padding = $self->{_padding};
     my $ngram = $self->{_ngram};
+    
+    if ( ! defined($ngram) ) {
+        croak("At least one class must be specified.");
+    }
 
     while ( <$fh> ) {
         chomp;
@@ -187,13 +197,11 @@ sub _open
 
 sub _load_model
 {
-    my ($self, $class) = @_;
+    my ($self, $class, $file) = @_;
 
     if ( $self->{_models_loaded}->{$class} ) {
         return;
     }
-
-    my $file = $self->{_model_file}->{$class};
 
     open(my $fh, "<:gzip:bytes", $file) or croak($!);
     my $ngram = <$fh>;
@@ -221,6 +229,8 @@ sub _load_model
     }
 
     close($fh);
+    
+    $self->{_models_loaded}->{$class} = 1;
 
     return;
 }
@@ -234,6 +244,13 @@ sub _unload_model
     }
 
     delete($self->{_models_loaded}->{$class});
+    
+    my $classes = $self->get_classes();
+#    print STDERR "\nX=removing $class\n" . (join("\t", @$classes)) . "\n" . (scalar @$classes) . "\nX\n";
+    if ( scalar @$classes == 0 ) {
+        delete($self->{_ngram});
+        $self->{_ngram} = undef;
+    }
 
     return;
 }
@@ -249,7 +266,7 @@ Lingua::YALI::Identifier - Returns information about languages.
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 METHODS
 

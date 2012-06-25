@@ -22,7 +22,8 @@ requires:
   File::Glob: 0
   File::ShareDir: 0
   Moose: 0
+  PerlIO::gzip: 0
   bytes: 0
   strict: 0
   warnings: 0
-version: 0.001
+version: 0.002

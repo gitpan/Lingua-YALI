@@ -5,6 +5,7 @@ use warnings;
 
 # ABSTRACT: Returns information about languages.
 
+
 use File::ShareDir;
 use File::Glob;
 use Carp;
@@ -106,7 +107,7 @@ Lingua::YALI::LanguageIdentifier - Returns information about languages.
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 METHODS
 
@@ -133,6 +134,8 @@ Returns registered languages.
 Returns all available languages that could be identified.
 
 =head4 Returns \@all_languages
+
+=encoding utf8
 
 =head1 AUTHOR
 

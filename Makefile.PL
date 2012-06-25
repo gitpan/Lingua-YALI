@@ -30,13 +30,14 @@ my %WriteMakefileArgs = (
     'File::Glob' => '0',
     'File::ShareDir' => '0',
     'Moose' => '0',
+    'PerlIO::gzip' => '0',
     'bytes' => '0',
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.001',
+  'VERSION' => '0.002',
   'test' => {
-    'TESTS' => 't/*.t t/LanguageIdentifier/*.t'
+    'TESTS' => 't/*.t t/Identifier/*.t t/LanguageIdentifier/*.t'
   }
 );
 
