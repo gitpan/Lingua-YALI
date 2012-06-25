@@ -35,9 +35,9 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.002',
+  'VERSION' => '0.003',
   'test' => {
-    'TESTS' => 't/*.t t/Identifier/*.t t/LanguageIdentifier/*.t'
+    'TESTS' => 't/*.t t/Builder/*.t t/Identifier/*.t t/LanguageIdentifier/*.t'
   }
 );
 

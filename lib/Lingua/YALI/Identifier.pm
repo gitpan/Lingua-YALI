@@ -5,6 +5,7 @@ use warnings;
 use Moose;
 use Carp;
 use PerlIO::gzip;
+use Lingua::YALI;
 
 # ABSTRACT: Returns information about languages.
 
@@ -77,7 +78,7 @@ sub get_classes
 sub identify_file
 {
     my ( $self, $file ) = @_;
-    my $fh = $self->_open($file);
+    my $fh = Lingua::YALI::_open($file);
 
     return $self->identify_handler($fh);
 }
@@ -169,32 +170,6 @@ sub identify_handler
     return \@sortedRes;
 }
 
-sub _open
-{
-    my ($self, $f) = @_;
-
-    croak("Not found: $f") if !-e $f;
-
-    my $opn;
-    my $hdl;
-    my $ft = qx(file '$f');
-
-    # file might not recognize some files!
-    if ( $f =~ /\.gz$/ || $ft =~ /gzip compressed data/ ) {
-        $opn = "zcat $f |";
-    }
-    elsif ( $f =~ /\.bz2$/ || $ft =~ /bzip2 compressed data/ ) {
-        $opn = "bzcat $f |";
-    }
-    else {
-        $opn = "$f";
-    }
-    open($hdl,"<:bytes", $opn) or croak ("Can't open '$opn': $!");
-    binmode $hdl, ":bytes";
-    return $hdl;
-}
-
-
 sub _load_model
 {
     my ($self, $class, $file) = @_;
@@ -266,7 +241,7 @@ Lingua::YALI::Identifier - Returns information about languages.
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 METHODS
 
