@@ -110,11 +110,11 @@ Lingua::YALI::LanguageIdentifier - Returns information about languages.
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
-This modul is can identify 122 languages.
+This modul is for language identification and can identify 122 languages.
 
     use Lingua::YALI::LanguageIdentifier;
     
