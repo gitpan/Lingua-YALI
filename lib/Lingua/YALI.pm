@@ -3,6 +3,7 @@ use warnings;
 package Lingua::YALI;
 # ABSTRACT: YALI - Yet Another Language Identifier.
 
+
 sub _open
 {
     my ($f) = @_;
@@ -38,7 +39,23 @@ Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.003_01
+version 0.004
+
+=head1 SYNOPSIS
+
+The YALI package contains several modules:
+
+=over
+
+=item * L<Lingua::YALI::Examples|Lingua::YALI::Examples> - contains examples.
+
+=item * L<Lingua::YALI::LanguageIdentifier|Lingua::YALI::LanguageIdentifier> - is capable of recognizing 122 languages.
+
+=item * L<Lingua::YALI::Identifier|Lingua::YALI::Identifier> - allows to use own models for identification.
+
+=item * L<Lingua::YALI::Builder|Lingua::YALI::Builder> - allows to construct own models for identification.
+
+=back
 
 =head1 AUTHOR
 

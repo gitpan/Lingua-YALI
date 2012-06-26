@@ -7,7 +7,7 @@ README
 dist.ini
 lib/Lingua/YALI.pm
 lib/Lingua/YALI/Builder.pm
-lib/Lingua/YALI/Examples.pom
+lib/Lingua/YALI/Examples.pod
 lib/Lingua/YALI/Identifier.pm
 lib/Lingua/YALI/LanguageIdentifier.pm
 lib/auto/Lingua/YALI/afr.yali.gz
@@ -150,6 +150,7 @@ t/Builder/sol.3.2.txt.gz
 t/Builder/sol.3.20.txt.gz
 t/Builder/sol.4.2.txt.gz
 t/Builder/sol.4.20.txt.gz
+t/Examples/01-LanguageIdentifier-Synopsis.t
 t/Identifier/00-general.t
 t/Identifier/01-add_class.t
 t/Identifier/02-remove_class.t

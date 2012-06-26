@@ -197,11 +197,11 @@ Lingua::YALI::Builder - Constructs model for document identification.
 
 =head1 VERSION
 
-version 0.003_01
+version 0.004
 
 =head1 SYNOPSIS
 
-This modul creates models for L<Lingua::YALI::Identifier>.
+This modul creates models for L<Lingua::YALI::Identifier|Lingua::YALI::Identifier>.
 
 Creating bigram and trigram models from a string.
 
@@ -212,6 +212,8 @@ Creating bigram and trigram models from a string.
     $builder->store("model_a.2_all.gz", 2);
     $builder->store("model_a.3_all.gz", 3);
     $builder->store("model_a.4_all.gz", 4); // croaks
+
+More examples is presented in L<Lingua::YALI::Examples|Lingua::YALI::Examples>.
 
 =head1 METHODS
 
@@ -313,7 +315,7 @@ If count is not specified all C<$ngram>-grams are stored.
 
 =over
 
-=item * Identifier for these models is L<Lingua::YALI::Identifier>.
+=item * Identifier for these models is L<Lingua::YALI::Identifier|Lingua::YALI::Identifier>.
 
 =item * Source codes are available at L<https://github.com/martin-majlis/YALI>.
 
