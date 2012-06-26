@@ -1,5 +1,5 @@
 ---
-abstract: 'Returns information about languages.'
+abstract: 'YALI - Yet Another Language Identifier.'
 author:
   - 'Martin Majlis <martin@majlis.cz>'
 build_requires:
@@ -21,9 +21,12 @@ requires:
   Carp: 0
   File::Glob: 0
   File::ShareDir: 0
+  List::MoreUtils: 0
   Moose: 0
+  Moose::Util::TypeConstraints: 0
+  POSIX: 0
   PerlIO::gzip: 0
   bytes: 0
   strict: 0
   warnings: 0
-version: 0.003
+version: 0.003_01

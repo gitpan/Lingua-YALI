@@ -1,23 +1,37 @@
 package Lingua::YALI::Builder;
+# ABSTRACT: Constructs model for document identification.
 
 use strict;
 use warnings;
 use Moose;
 use Carp;
 use Lingua::YALI;
+use Moose::Util::TypeConstraints;
+use List::MoreUtils qw(uniq);
+use POSIX;
 
-# ABSTRACT: Returns information about languages.
 
-has 'ngrams' => ( is => 'ro', isa => 'ArrayRef' );
+
+subtype 'PositiveInt',
+      as 'Int',
+      where { $_ > 0 },
+      message { "The number you provided, $_, was not a positive number" };
+
+
+has 'ngrams' => ( is => 'ro', isa => 'ArrayRef[PositiveInt]', required => 1 );
 has '_max_ngram' => ( is => 'rw', isa => 'Int' );
 has '_dict' => ( is => 'rw', isa => 'HashRef' );
 
 sub BUILD
 {
     my $self = shift;
-    my @sorted = sort { $b <=> $a } @{$self->{ngrams}};
-    $self->{_max_ngram} = $sorted[0];
+    my @unique = uniq( @{$self->{ngrams}} );
+    my @sorted = sort { $a <=> $b } @unique;
+    $self->{ngrams} = \@sorted;
+    $self->{_max_ngram} = $sorted[$#sorted];
 }
+
+
 
 sub get_ngrams
 {
@@ -26,37 +40,65 @@ sub get_ngrams
 }
 
 
+sub get_max_ngram
+{
+    my $self = shift;
+    return $self->{_max_ngram};
+}
+
+
 sub train_file
 {
     my ( $self, $file ) = @_;
+    if ( ! defined($file) ) {
+        return;
+    }
+
     my $fh = Lingua::YALI::_open($file);
 
-    return $self->train_handler($fh);
+    return $self->train_handle($fh);
 }
+
 
 sub train_string
 {
     my ( $self, $string ) = @_;
+
+    if ( ! defined($string) ) {
+        return;
+    }
+
     open(my $fh, "<", \$string) or croak $!;
 
-    my $result = $self->train_handler($fh);
+    my $result = $self->train_handle($fh);
 
     close($fh);
 
     return $result;
 }
 
-sub train_handler
+sub train_handle
 {
-    my ($self, $fh, $verbose) = @_;
+    my ($self, $fh) = @_;
+
+#    print STDERR "\nX\n" . (ref $fh) . "\nX\n";
+
+    if ( ! defined($fh) ) {
+        return;
+    } elsif ( ref $fh ne "GLOB" ) {
+        croak("Expected file handler but " . (ref $fh) . " was used.");
+    }
+
     my %actRes = ();
 
 #    my $padding = $self->{_padding};
     my @ngrams = @{$self->ngrams};
     my $padding = "";
     my $subsub = "";
-    my $sub = "";    
-    
+    my $sub = "";
+
+    my $total_length = 0;
+
     while ( <$fh> ) {
         chomp;
         s/ +/ /g;
@@ -70,7 +112,11 @@ sub train_handler
 
         {
             use bytes;
-            for my $i (0 .. bytes::length($_) - $self->{_max_ngram}) {
+
+            my $act_length = bytes::length($_);
+            $total_length += $act_length;
+                    
+            for my $i (0 .. $act_length - $self->{_max_ngram}) {
                 $sub = substr($_, $i, $self->{_max_ngram});
                 for my $j (@ngrams) {
                     $subsub = bytes::substr($sub, 0, $j);
@@ -85,31 +131,61 @@ sub train_handler
         }
     }
 
-    return 1;
+    return $total_length;
 }
+
 
 sub store
 {
-    my ($self, $file, $ngram, $lines) = @_;
+    my ($self, $file, $ngram, $count) = @_;
+
+    if ( ! defined($file) ) {
+        croak("parametr file has to be specified");
+    }
+
+#    if ( -f $file && ! -w $file ) {
+#        croak("file $file has to be writeable");
+#    }
+
+    if ( ! defined($ngram) ) {
+        croak("parametr ngram has to be specified");
+    }
 
     if ( ! defined($self->{_dict}->{$ngram}) ) {
         croak("$ngram-grams were not counted.");
     }
 
-    open(my $fhModel, ">:gzip:bytes", $file) or die $!;
-    
+    if ( ! defined($count) ) {
+        $count = POSIX::INT_MAX;
+    }
+
+    if ( $count < 1 ) {
+        croak("At least one n-gram has to be saved. Count was set to: $count");
+    }
+
+    open(my $fhModel, ">:gzip:bytes", $file) or croak($!);
+
     print $fhModel $ngram . "\n";
 
+    my $i = 0;
+        
     {
         no warnings;
 
         for my $k (sort { $self->{_dict}->{$ngram}{$b} <=> $self->{_dict}->{$ngram}{$a} } keys %{$self->{_dict}->{$ngram}}) {
             print $fhModel "$k\t$self->{_dict}->{$ngram}{$k}\n";
+            if ( ++$i > $count ) {
+                last;
+            }
         }
     }
 
     close($fhModel);
+    
+    return ($i - 1);
 }
+
+
 1;
 
 __END__
@@ -117,37 +193,131 @@ __END__
 
 =head1 NAME
 
-Lingua::YALI::Builder - Returns information about languages.
+Lingua::YALI::Builder - Constructs model for document identification.
 
 =head1 VERSION
 
-version 0.003
+version 0.003_01
+
+=head1 SYNOPSIS
+
+This modul creates models for L<Lingua::YALI::Identifier>.
+
+Creating bigram and trigram models from a string.
+
+    use Lingua::YALI::Builder;
+    my $builder = Lingua::YALI::Builder->new(ngrams=>[2, 3]);
+    $builder->train_string("aaaaa aaaa aaa aaa aaa aaaaa aa");
+    $builder->store("model_a.2_4.gz", 2, 4);
+    $builder->store("model_a.2_all.gz", 2);
+    $builder->store("model_a.3_all.gz", 3);
+    $builder->store("model_a.4_all.gz", 4); // croaks
 
 =head1 METHODS
 
 =head2 BUILD
 
-Bla bla
+    BUILD()
+
+Constructs C<Builder>. It also removes duplicities from C<ngrams>.
+
+    my $builder = Lingua::YALI::Builder->new(ngrams=>[2, 3, 4]);
 
 =head2 get_ngrams
 
-Bla bla
+    my \@ngrams = $builder->get_ngrams()
 
-=head2 train_file($file)
+Returns all n-grams that will be used during training.
 
-Bla bla
+    my $builder = Lingua::YALI::Builder->new(ngrams=>[2, 3, 4, 2, 3]);
+    my $ngrams = $builder->get_ngrams();
+    print join(", ", @$ngras) . "\n";
+    // prints out 2, 3, 4
 
-=head2 train_string($string)
+=head2 get_max_ngram
 
-Bla bla
+    my $max_ngram = $builder->get_max_ngram()
 
-=head2 train_handler($fh)
+Returns the highest n-gram size that will be used during training.
 
-Bla bla
+    my $builder = Lingua::YALI::Builder->new(ngrams=>[2, 3, 4]);
+    print $builder->get_max_ngram() . "\n";
+    // prints out 4
 
-=head2 store($file, $ngram, $lines)
+=head2 train_file
 
-Bla bla
+    my $used_bytes = $builder->train_file($file)
+
+Trains classifier on file C<$file> and returns the amount of bytes used for trainig. 
+
+=over
+
+=item * It returns undef if C<$file> is undef.
+
+=item * It croaks if the file C<$file> does not exist or is not readable.
+
+=item * It returns the amount of bytes used for trainig otherwise.
+
+=back
+
+For more details look at method L</train_handle>.
+
+=head2 train_string
+
+    my $used_bytes = $builder->train_string($string)
+
+Trains classifier on string C<$string> and returns the amount of bytes used for trainig. 
+
+=over
+
+=item * It returns undef if C<$string> is undef.
+
+=item * It returns the amount of bytes used for trainig otherwise.
+
+=back
+
+For more details look at method L</train_handle>.
+
+=head2 train_handle
+
+    my $used_bytes = $builder->train_handle($fh)
+
+Trains classifier on file handle C<$fh> and returns the amount of bytes used for trainig. 
+
+=over
+
+=item * It returns undef if C<$fh> is undef.
+
+=item * It croaks if the C<$fh> is not file handle.
+
+=item * It returns the amount of bytes used for trainig otherwise.
+
+=back
+
+=head2 store
+
+    my $stored_count = $builder->store($file, $ngram, $count)
+
+Stores trained model with at most C<$count> C<$ngram>-grams to file C<$file>. 
+If count is not specified all C<$ngram>-grams are stored.
+
+=over
+
+=item * It croaks if incorrect parameters are passed.
+
+=item * It returns the amount of n-grams stored.
+
+=back
+
+=head1 SEE ALSO
+
+=over
+
+=item * Identifier for these models is L<Lingua::YALI::Identifier>.
+
+=item * Source codes are available at L<https://github.com/martin-majlis/YALI>.
+
+=back
 
 =head1 AUTHOR
 

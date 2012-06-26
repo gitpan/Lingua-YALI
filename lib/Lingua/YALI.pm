@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 package Lingua::YALI;
-# ABSTRACT: Returns information about languages.
+# ABSTRACT: YALI - Yet Another Language Identifier.
 
 sub _open
 {
@@ -34,11 +34,11 @@ __END__
 
 =head1 NAME
 
-Lingua::YALI - Returns information about languages.
+Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.003
+version 0.003_01
 
 =head1 AUTHOR
 

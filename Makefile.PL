@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Returns information about languages.',
+  'ABSTRACT' => 'YALI - Yet Another Language Identifier.',
   'AUTHOR' => 'Martin Majlis <martin@majlis.cz>',
   'BUILD_REQUIRES' => {
     'English' => '0',
@@ -29,13 +29,16 @@ my %WriteMakefileArgs = (
     'Carp' => '0',
     'File::Glob' => '0',
     'File::ShareDir' => '0',
+    'List::MoreUtils' => '0',
     'Moose' => '0',
+    'Moose::Util::TypeConstraints' => '0',
+    'POSIX' => '0',
     'PerlIO::gzip' => '0',
     'bytes' => '0',
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.003',
+  'VERSION' => '0.003_01',
   'test' => {
     'TESTS' => 't/*.t t/Builder/*.t t/Identifier/*.t t/LanguageIdentifier/*.t'
   }

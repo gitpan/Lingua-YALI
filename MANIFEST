@@ -1,3 +1,4 @@
+Changelog
 LICENSE
 MANIFEST
 META.yml
@@ -6,6 +7,7 @@ README
 dist.ini
 lib/Lingua/YALI.pm
 lib/Lingua/YALI/Builder.pm
+lib/Lingua/YALI/Examples.pom
 lib/Lingua/YALI/Identifier.pm
 lib/Lingua/YALI/LanguageIdentifier.pm
 lib/auto/Lingua/YALI/afr.yali.gz
@@ -130,6 +132,8 @@ lib/auto/Lingua/YALI/wln.yali.gz
 lib/auto/Lingua/YALI/yid.yali.gz
 lib/auto/Lingua/YALI/yor.yali.gz
 lib/auto/Lingua/YALI/zho.yali.gz
+pod2htmd.tmp
+pod2htmi.tmp
 t/00-everything_loads.t
 t/Builder/00-general.t
 t/Builder/01-new.t
@@ -137,17 +141,21 @@ t/Builder/02-train_file.t
 t/Builder/03-train_handler.t
 t/Builder/04-train_string.t
 t/Builder/05-store_with_train_file.t
-t/Builder/06-store_with_train_handler.t
+t/Builder/06-store_with_train_handle.t
 t/Builder/07-store_with_train_string.t
+t/Builder/08-store_with_wrong_parameters.t
+t/Builder/sol.2.2.txt.gz
 t/Builder/sol.2.20.txt.gz
+t/Builder/sol.3.2.txt.gz
 t/Builder/sol.3.20.txt.gz
+t/Builder/sol.4.2.txt.gz
 t/Builder/sol.4.20.txt.gz
 t/Identifier/00-general.t
 t/Identifier/01-add_class.t
 t/Identifier/02-remove_class.t
 t/Identifier/03-get_classes.t
 t/Identifier/04-identify_file.t
-t/Identifier/05-identify_handler.t
+t/Identifier/05-identify_handle.t
 t/Identifier/06-identify_string.t
 t/Identifier/07-manipulation_with_classes.t
 t/Identifier/08-manipulation_and_identification.t
@@ -164,7 +172,7 @@ t/LanguageIdentifier/01-add_language.t
 t/LanguageIdentifier/02-remove_language.t
 t/LanguageIdentifier/03-get_languages.t
 t/LanguageIdentifier/04-identify_file.t
-t/LanguageIdentifier/05-identify_handler.t
+t/LanguageIdentifier/05-identify_handle.t
 t/LanguageIdentifier/06-identify_string.t
 t/LanguageIdentifier/ces01.txt
 t/LanguageIdentifier/eng01.txt

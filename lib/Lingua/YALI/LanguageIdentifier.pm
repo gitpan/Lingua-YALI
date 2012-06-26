@@ -107,7 +107,7 @@ Lingua::YALI::LanguageIdentifier - Returns information about languages.
 
 =head1 VERSION
 
-version 0.003
+version 0.003_01
 
 =head1 METHODS
 
