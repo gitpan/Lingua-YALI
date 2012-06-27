@@ -271,7 +271,7 @@ Lingua::YALI::Identifier - Module for language identification with custom models
 
 =head1 VERSION
 
-version 0.006
+version 0.008
 
 =head1 SYNOPSIS
 

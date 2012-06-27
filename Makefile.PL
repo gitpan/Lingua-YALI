@@ -13,7 +13,6 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Martin Majlis <martin@majlis.cz>',
   'BUILD_REQUIRES' => {
     'English' => '0',
-    'File::Basename' => '0',
     'Test::Exception' => '0',
     'Test::More' => '0',
     'Time::HiRes' => '0'
@@ -31,6 +30,7 @@ my %WriteMakefileArgs = (
   'NAME' => 'Lingua::YALI',
   'PREREQ_PM' => {
     'Carp' => '0',
+    'File::Basename' => '0',
     'File::Glob' => '0',
     'File::ShareDir' => '0',
     'Getopt::Long' => '0',
@@ -44,7 +44,7 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.006',
+  'VERSION' => '0.008',
   'test' => {
     'TESTS' => 't/*.t t/Builder/*.t t/Examples/*.t t/Identifier/*.t t/LanguageIdentifier/*.t'
   }

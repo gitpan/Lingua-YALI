@@ -1,4 +1,4 @@
-Changelog
+Changes
 LICENSE
 MANIFEST
 META.yml
@@ -168,6 +168,7 @@ t/Identifier/07-manipulation_with_classes.t
 t/Identifier/08-manipulation_and_identification.t
 t/Identifier/aaa01.txt
 t/Identifier/bbb01.txt
+t/Identifier/classes.list
 t/Identifier/mix01.txt
 t/Identifier/model.a1.gz
 t/Identifier/model.a2.gz

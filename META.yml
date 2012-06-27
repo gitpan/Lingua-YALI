@@ -4,14 +4,13 @@ author:
   - 'Martin Majlis <martin@majlis.cz>'
 build_requires:
   English: 0
-  File::Basename: 0
   Test::Exception: 0
   Test::More: 0
   Time::HiRes: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.112150'
+generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.120921'
 license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -19,6 +18,7 @@ meta-spec:
 name: Lingua-YALI
 requires:
   Carp: 0
+  File::Basename: 0
   File::Glob: 0
   File::ShareDir: 0
   Getopt::Long: 0
@@ -31,4 +31,4 @@ requires:
   bytes: 0
   strict: 0
   warnings: 0
-version: 0.006
+version: 0.008
