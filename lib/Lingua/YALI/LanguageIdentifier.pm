@@ -1,5 +1,5 @@
 package Lingua::YALI::LanguageIdentifier;
-# ABSTRACT: Returns information about languages.
+# ABSTRACT: Module for language identification.
 
 use strict;
 use warnings;
@@ -106,11 +106,11 @@ __END__
 
 =head1 NAME
 
-Lingua::YALI::LanguageIdentifier - Returns information about languages.
+Lingua::YALI::LanguageIdentifier - Module for language identification.
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 

@@ -1,0 +1,36 @@
+#!/usr/bin/env perl
+# ABSTRACT: Script for building language models
+# PODNAME: yali-builder
+
+use strict;
+use warnings;
+
+use Lingua::YALI::Builder;
+
+
+
+__END__
+=pod
+
+=head1 NAME
+
+yali-builder - Script for building language models
+
+=head1 VERSION
+
+version 0.006
+
+=head1 AUTHOR
+
+Martin Majlis <martin@majlis.cz>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2012 by Martin Majlis.
+
+This is free software, licensed under:
+
+  The (three-clause) BSD License
+
+=cut
+

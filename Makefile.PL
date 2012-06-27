@@ -22,23 +22,29 @@ my %WriteMakefileArgs = (
     'ExtUtils::MakeMaker' => '6.31'
   },
   'DISTNAME' => 'Lingua-YALI',
-  'EXE_FILES' => [],
+  'EXE_FILES' => [
+    'bin/yali-builder',
+    'bin/yali-identifier',
+    'bin/yali-language-identifier'
+  ],
   'LICENSE' => 'bsd',
   'NAME' => 'Lingua::YALI',
   'PREREQ_PM' => {
     'Carp' => '0',
     'File::Glob' => '0',
     'File::ShareDir' => '0',
+    'Getopt::Long' => '0',
     'List::MoreUtils' => '0',
     'Moose' => '0',
     'Moose::Util::TypeConstraints' => '0',
     'POSIX' => '0',
     'PerlIO::gzip' => '0',
+    'Pod::Usage' => '0',
     'bytes' => '0',
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.005',
+  'VERSION' => '0.006',
   'test' => {
     'TESTS' => 't/*.t t/Builder/*.t t/Examples/*.t t/Identifier/*.t t/LanguageIdentifier/*.t'
   }

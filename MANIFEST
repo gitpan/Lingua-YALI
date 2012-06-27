@@ -4,6 +4,9 @@ MANIFEST
 META.yml
 Makefile.PL
 README
+bin/yali-builder
+bin/yali-identifier
+bin/yali-language-identifier
 dist.ini
 lib/Lingua/YALI.pm
 lib/Lingua/YALI/Builder.pm

@@ -7,7 +7,7 @@ use Carp;
 use PerlIO::gzip;
 use Lingua::YALI;
 
-# ABSTRACT: Returns information about languages.
+# ABSTRACT: Module for language identification with custom models.
 
 has '_model_file' => ( is => 'rw', isa => 'HashRef' );
 has '_frequency' => ( is => 'rw', isa => 'HashRef' );
@@ -76,7 +76,7 @@ sub identify_file
     my ( $self, $file ) = @_;
     
     if ( ! defined($file) ) {
-        return undef;
+        return;
     }
     
     my $fh = Lingua::YALI::_open($file);
@@ -267,11 +267,11 @@ __END__
 
 =head1 NAME
 
-Lingua::YALI::Identifier - Returns information about languages.
+Lingua::YALI::Identifier - Module for language identification with custom models.
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
