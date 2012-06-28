@@ -197,7 +197,7 @@ Lingua::YALI::Builder - Constructs model for document identification.
 
 =head1 VERSION
 
-version 0.009
+version 0.009_01
 
 =head1 SYNOPSIS
 

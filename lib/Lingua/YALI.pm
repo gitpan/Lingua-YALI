@@ -80,7 +80,7 @@ Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.009
+version 0.009_01
 
 =head1 SYNOPSIS
 

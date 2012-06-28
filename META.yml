@@ -10,6 +10,7 @@ build_requires:
   Time::HiRes: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.31
+  File::ShareDir::Install: 0.03
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.120921'
 license: bsd
@@ -32,4 +33,4 @@ requires:
   bytes: 0
   strict: 0
   warnings: 0
-version: 0.009
+version: 0.009_01

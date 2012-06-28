@@ -110,7 +110,7 @@ Lingua::YALI::LanguageIdentifier - Module for language identification.
 
 =head1 VERSION
 
-version 0.009
+version 0.009_01
 
 =head1 SYNOPSIS
 
