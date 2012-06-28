@@ -13,6 +13,7 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Martin Majlis <martin@majlis.cz>',
   'BUILD_REQUIRES' => {
     'English' => '0',
+    'Test::Command' => '0',
     'Test::Exception' => '0',
     'Test::More' => '0',
     'Time::HiRes' => '0'
@@ -44,9 +45,9 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.008',
+  'VERSION' => '0.009',
   'test' => {
-    'TESTS' => 't/*.t t/Builder/*.t t/Examples/*.t t/Identifier/*.t t/LanguageIdentifier/*.t'
+    'TESTS' => 't/*.t t/Builder/*.t t/Examples/*.t t/Identifier/*.t t/LanguageIdentifier/*.t t/yali-builder/*.t t/yali-language-identifier/*.t'
   }
 );
 

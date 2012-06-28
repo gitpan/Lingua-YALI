@@ -4,6 +4,7 @@ author:
   - 'Martin Majlis <martin@majlis.cz>'
 build_requires:
   English: 0
+  Test::Command: 0
   Test::Exception: 0
   Test::More: 0
   Time::HiRes: 0
@@ -31,4 +32,4 @@ requires:
   bytes: 0
   strict: 0
   warnings: 0
-version: 0.008
+version: 0.009

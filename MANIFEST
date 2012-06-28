@@ -153,9 +153,6 @@ t/Builder/sol.3.2.txt.gz
 t/Builder/sol.3.20.txt.gz
 t/Builder/sol.4.2.txt.gz
 t/Builder/sol.4.20.txt.gz
-t/Builder/tmp.2.2.txt.gz
-t/Builder/tmp.2.20.txt.gz
-t/Builder/tmp.3.20.txt.gz
 t/Examples/01-LanguageIdentifier-Synopsis.t
 t/Identifier/00-general.t
 t/Identifier/01-add_class.t
@@ -187,3 +184,13 @@ t/LanguageIdentifier/eng01.txt
 t/author-critic.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
+t/yali-builder/00-general.t
+t/yali-builder/01-help.t
+t/yali-builder/02-count.t
+t/yali-builder/03-ngram.t
+t/yali-builder/04-train.t
+t/yali-language-identifier/00-general.t
+t/yali-language-identifier/01-help.t
+t/yali-language-identifier/02-format.t
+t/yali-language-identifier/03-ngram.t
+t/yali-language-identifier/04-train.t

@@ -15,7 +15,7 @@ use Pod::Usage;
 my $file_list = undef;
 my $input_file = undef;
 my $format = "single";
-my $languages = 0;
+my $languages = undef;
 my $help = 0;
 my $supported = 0;
 
@@ -25,24 +25,10 @@ my $result = GetOptions("filelist=s" => \$file_list,
                      "format|f=s"  => \$format,
                      "supported|s"  => \$supported,
                      "help|h"  => \$help
-) || pod2usage(2);
+) || pod2usage(5);
 
 if ($help) {
-    pod2usage();
-}
-
-if ( $format ne "single" && $format ne "all" && $format ne "all_p" && $format ne "tabbed" ) {
-    pod2usage("Unsupported format $format.");
-}
-
-# it is incorrect when parameter filelist and input are specified
-if ( defined($input_file) && defined($file_list) ) {
-    pod2usage("Options --filelist and --input can not be specified in the same time.");
-}
-
-# it is also incorrect when none of parameter filelist and input is specified
-if ( ! defined($input_file) && ! defined($file_list) ) {
-    pod2usage("At least one of options --filelist and --input must be specified.");
+    pod2usage(-exitval => 0);
 }
 
 my $identifier = Lingua::YALI::LanguageIdentifier->new();
@@ -51,6 +37,24 @@ my $identifier = Lingua::YALI::LanguageIdentifier->new();
 if ( $supported ) {
     print join("\n", @{$identifier->get_available_languages()}), "\n";
     exit;
+}
+
+if ( $format ne "single" && $format ne "all" && $format ne "all_p" && $format ne "tabbed" ) {
+    pod2usage("Unsupported format $format.");
+}
+
+# 
+if ( ! defined($input_file) && ! defined($file_list) ) {
+    $input_file = "-";
+}
+
+# it is incorrect when parameter filelist and input are specified
+if ( defined($input_file) && defined($file_list) ) {
+    pod2usage("Options --filelist and --input can not be specified in the same time.");
+}
+
+if ( ! defined($languages) ) {
+    pod2usage("Options --languages has to be specified.");
 }
 
 # register required languages
@@ -86,7 +90,7 @@ yali-language-identifier - Script for language identification
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 SYNOPSIS
 
@@ -112,6 +116,8 @@ EXAMPLES:
 
  Is file /etc/passwd written in english or czech?
  cat /etc/passwd | yali-language-identifier -i=- -l="eng ces"
+
+More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples> 
 
 =head1 AUTHOR
 
