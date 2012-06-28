@@ -1,5 +1,5 @@
 package Lingua::YALI::LanguageIdentifier;
-our $VERSION = '0.009_02'; # VERSION
+our $VERSION = '0.009_03'; # VERSION
 # ABSTRACT: Module for language identification.
 
 use strict;
@@ -111,7 +111,7 @@ Lingua::YALI::LanguageIdentifier - Module for language identification.
 
 =head1 VERSION
 
-version 0.009_02
+version 0.009_03
 
 =head1 SYNOPSIS
 

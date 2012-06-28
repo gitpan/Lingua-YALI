@@ -2,7 +2,7 @@
 
 # ABSTRACT: Script for language identification
 # PODNAME: yali-language-identifier
-our $VERSION = '0.009_02'; # VERSION
+our $VERSION = '0.009_03'; # VERSION
 
 use strict;
 use warnings;
@@ -91,7 +91,7 @@ yali-language-identifier - Script for language identification
 
 =head1 VERSION
 
-version 0.009_02
+version 0.009_03
 
 =head1 SYNOPSIS
 
