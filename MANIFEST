@@ -166,6 +166,7 @@ t/Identifier/08-manipulation_and_identification.t
 t/Identifier/aaa01.txt
 t/Identifier/bbb01.txt
 t/Identifier/classes.list
+t/Identifier/files.txt
 t/Identifier/mix01.txt
 t/Identifier/model.a1.gz
 t/Identifier/model.a2.gz
@@ -181,6 +182,7 @@ t/LanguageIdentifier/05-identify_handle.t
 t/LanguageIdentifier/06-identify_string.t
 t/LanguageIdentifier/ces01.txt
 t/LanguageIdentifier/eng01.txt
+t/LanguageIdentifier/files.txt
 t/author-critic.t
 t/release-cpan-changes.t
 t/release-pod-coverage.t
@@ -190,8 +192,16 @@ t/yali-builder/01-help.t
 t/yali-builder/02-count.t
 t/yali-builder/03-ngram.t
 t/yali-builder/04-train.t
+t/yali-identifier/00-general.t
+t/yali-identifier/01-help.t
+t/yali-identifier/02-format.t
+t/yali-identifier/03-classes.t
+t/yali-identifier/04-input.t
+t/yali-identifier/05-filelist.t
 t/yali-language-identifier/00-general.t
 t/yali-language-identifier/01-help.t
 t/yali-language-identifier/02-format.t
-t/yali-language-identifier/03-ngram.t
-t/yali-language-identifier/04-train.t
+t/yali-language-identifier/03-supported.t
+t/yali-language-identifier/04-languages.t
+t/yali-language-identifier/05-input.t
+t/yali-language-identifier/06-filelist.t

@@ -1,10 +1,11 @@
 package Lingua::YALI;
 # ABSTRACT: YALI - Yet Another Language Identifier.
-our $VERSION = '0.009_03'; # VERSION
 
 use strict;
 use warnings;
 use Carp;
+
+our $VERSION = '0.010'; # VERSION
 
 
 
@@ -80,7 +81,7 @@ Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.009_03
+version 0.010
 
 =head1 SYNOPSIS
 

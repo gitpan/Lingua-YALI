@@ -1,6 +1,5 @@
 package Lingua::YALI::Builder;
 # ABSTRACT: Constructs model for document identification.
-our $VERSION = '0.009_03'; # VERSION
 
 use strict;
 use warnings;
@@ -11,6 +10,7 @@ use Moose::Util::TypeConstraints;
 use List::MoreUtils qw(uniq);
 use POSIX;
 
+our $VERSION = '0.010'; # VERSION
 
 
 subtype 'PositiveInt',
@@ -198,7 +198,7 @@ Lingua::YALI::Builder - Constructs model for document identification.
 
 =head1 VERSION
 
-version 0.009_03
+version 0.010
 
 =head1 SYNOPSIS
 

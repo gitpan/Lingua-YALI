@@ -10,8 +10,8 @@ my $cmd_base = dirname(__FILE__) . "/../../bin/yali-builder";
 
 ok(-x $cmd_base);
 
-exit_is_num($cmd_base . " --unknownoption", 5);
-exit_is_num($cmd_base, 2);
+exit_is_num($cmd_base . " --unknownoption", 105);
+exit_is_num($cmd_base, 101);
 
 
 
