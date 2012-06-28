@@ -1,6 +1,8 @@
 #!/usr/bin/env perl
+
 # ABSTRACT: Script for building language models
 # PODNAME: yali-builder
+our $VERSION = '0.009_02'; # VERSION
 
 use strict;
 use warnings;
@@ -92,7 +94,7 @@ yali-builder - Script for building language models
 
 =head1 VERSION
 
-version 0.009_01
+version 0.009_02
 
 =head1 SYNOPSIS
 

@@ -1,5 +1,6 @@
 package Lingua::YALI::Builder;
 # ABSTRACT: Constructs model for document identification.
+our $VERSION = '0.009_02'; # VERSION
 
 use strict;
 use warnings;
@@ -197,7 +198,7 @@ Lingua::YALI::Builder - Constructs model for document identification.
 
 =head1 VERSION
 
-version 0.009_01
+version 0.009_02
 
 =head1 SYNOPSIS
 
