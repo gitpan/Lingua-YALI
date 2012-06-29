@@ -10,7 +10,7 @@ use Moose::Util::TypeConstraints;
 use List::MoreUtils qw(uniq);
 use POSIX;
 
-our $VERSION = '0.010_03'; # VERSION
+our $VERSION = '0.010_04'; # VERSION
 
 
 subtype 'PositiveInt',
@@ -50,9 +50,11 @@ sub BUILD
     my @unique = uniq( @{$self->{ngrams}} );
     my @sorted = sort { $a <=> $b } @unique;
     $self->{ngrams} = \@sorted;
-    
+
     # select the greatest n-gram
-    $self->{_max_ngram} = $sorted[$#sorted];
+    $self->{_max_ngram} = $sorted[-1];
+
+    return;
 }
 
 
@@ -74,7 +76,7 @@ sub get_max_ngram
 sub train_file
 {
     my ( $self, $file ) = @_;
-    
+
     # parameter check
     if ( ! defined($file) ) {
         return;
@@ -192,7 +194,7 @@ sub store
     if ( $count < 1 ) {
         croak("At least one n-gram has to be saved. Count was set to: $count");
     }
-    
+
     if ( ! defined($self->{_dict}->{$self->get_max_ngram()}) ) {
         croak("No training data was used.");
     }
@@ -203,18 +205,15 @@ sub store
     # prints out n-gram size
     print $fhModel $ngram . "\n";
 
+    # store n-grams
     my $i = 0;
-
-    {
-        no warnings;
-
-        for my $k (sort { $self->{_dict}->{$ngram}{$b} <=> $self->{_dict}->{$ngram}{$a} } keys %{$self->{_dict}->{$ngram}}) {
-            print $fhModel "$k\t$self->{_dict}->{$ngram}{$k}\n";
-            if ( ++$i > $count ) {
-                last;
-            }
+    for my $k (sort { $self->{_dict}->{$ngram}{$b} <=> $self->{_dict}->{$ngram}{$a} } keys %{$self->{_dict}->{$ngram}}) {
+        print $fhModel "$k\t$self->{_dict}->{$ngram}{$k}\n";
+        if ( ++$i > $count ) {
+            last;
         }
     }
+
 
     close($fhModel);
 
@@ -233,13 +232,13 @@ Lingua::YALI::Builder - Constructs language models for language identification.
 
 =head1 VERSION
 
-version 0.010_03
+version 0.010_04
 
 =head1 SYNOPSIS
 
 This modul creates models for L<Lingua::YALI::Identifier|Lingua::YALI::Identifier>.
 
-If your texts are from specific domain you can achive better 
+If your texts are from specific domain you can achive better
 results when your models will be trained on texts from the same domain.
 
 Creating bigram and trigram models from a string.
