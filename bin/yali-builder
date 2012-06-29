@@ -20,7 +20,7 @@ use Pod::Usage;
 use Carp;
 use File::Basename;
 
-our $VERSION = '0.010'; # VERSION
+our $VERSION = '0.010_01'; # VERSION
 
 my $output_file = undef;
 my $file_list = undef;
@@ -95,7 +95,7 @@ yali-builder - Script for building language models
 
 =head1 VERSION
 
-version 0.010
+version 0.010_01
 
 =head1 SYNOPSIS
 

@@ -14,7 +14,7 @@ use Pod::Usage;
 use Carp;
 use File::Basename;
 
-our $VERSION = '0.010'; # VERSION
+our $VERSION = '0.010_01'; # VERSION
 
 my $file_list = undef;
 my $input_file = undef;
@@ -118,7 +118,7 @@ yali-identifier - Script for language identification with custom models
 
 =head1 VERSION
 
-version 0.010
+version 0.010_01
 
 =head1 SYNOPSIS
 
