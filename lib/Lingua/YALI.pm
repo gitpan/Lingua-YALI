@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '0.010_01'; # VERSION
+our $VERSION = '0.010_02'; # VERSION
 
 
 
@@ -81,7 +81,7 @@ Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.010_01
+version 0.010_02
 
 =head1 SYNOPSIS
 

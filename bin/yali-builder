@@ -7,12 +7,6 @@ use strict;
 use warnings;
 
 use Lingua::YALI::Builder;
-
-
-use strict;
-use warnings;
-
-use Lingua::YALI::Identifier;
 use Lingua::YALI;
 
 use Getopt::Long;
@@ -20,7 +14,7 @@ use Pod::Usage;
 use Carp;
 use File::Basename;
 
-our $VERSION = '0.010_01'; # VERSION
+our $VERSION = '0.010_02'; # VERSION
 
 my $output_file = undef;
 my $file_list = undef;
@@ -41,7 +35,7 @@ if ($help) {
     pod2usage(-exitval => 0);
 }
 
-# 
+# reading input from STDIN is default
 if ( ! defined($input_file) && ! defined($file_list) ) {
     $input_file = "-";
 }
@@ -51,10 +45,12 @@ if ( defined($input_file) && defined($file_list) ) {
     pod2usage(-exitval => 101, -msg     => "Options --filelist and --input can not be specified in the same time.");
 }
 
+# output file is required
 if ( ! defined($output_file) ) {
     pod2usage(-exitval => 101, -msg     => "Output file --output has to be specified.");
 }
 
+# check parameter range
 if ( defined($count) && $count < 1 ) {
     pod2usage(-exitval => 101, -msg     => "The number of n-grams --count has to be positive. $count was used.");
 }
@@ -63,7 +59,10 @@ if ( $ngram < 1 ) {
     pod2usage(-exitval => 101, -msg     => "The n-gram size --ngram has to be positive. $ngram was used.");
 }
 
+# construct builder
 my $builder = Lingua::YALI::Builder->new(ngrams=>[$ngram]);
+
+# train models from input
 if ( defined($input_file) ) {
     if ( $input_file eq "-" ) {
         $builder->train_handle(\*STDIN);
@@ -83,6 +82,7 @@ if ( defined($input_file) ) {
     }
 }
 
+# store results
 $builder->store($output_file, $ngram, $count);
 
 
@@ -95,11 +95,13 @@ yali-builder - Script for building language models
 
 =head1 VERSION
 
-version 0.010_01
+version 0.010_02
 
 =head1 SYNOPSIS
 
 yali-builder [options]
+
+Train models for language identification with yali-identifier.
 
 Options:
 
@@ -110,7 +112,9 @@ Options:
  -c, --count           the number of n-grams
  -h, --help            prints documentation
 
-More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples> 
+More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples>
+
+Version: 0.010_02 (2012-06-29)
 
 =head1 AUTHOR
 

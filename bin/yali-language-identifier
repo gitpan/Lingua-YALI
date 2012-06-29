@@ -13,7 +13,7 @@ use Getopt::Long;
 use Pod::Usage;
 use File::Basename;
 
-our $VERSION = '0.010_01'; # VERSION
+our $VERSION = '0.010_02'; # VERSION
 
 my $file_list = undef;
 my $input_file = undef;
@@ -42,16 +42,17 @@ if ( $supported ) {
     exit;
 }
 
+# check output format
 if ( $format ne "single" && $format ne "all" && $format ne "all_p" && $format ne "tabbed" ) {
     pod2usage(-exitval => 101, -msg => "Unsupported format $format.");
 }
 
-# 
+# reading input from STDIN is default
 if ( ! defined($input_file) && ! defined($file_list) ) {
     $input_file = "-";
 }
 
-# it is incorrect when parameter filelist and input are specified
+# it is incorrect when parameter filelist and input are both specified
 if ( defined($input_file) && defined($file_list) ) {
     pod2usage(-exitval => 101, -msg => "Options --filelist and --input can not be specified in the same time.");
 }
@@ -64,6 +65,7 @@ if ( ! defined($languages) ) {
 my @languages = split(/ /, $languages);
 $identifier->add_language(@languages);
 
+# identify languages
 if ( defined($input_file) ) {
     if ( $input_file eq "-" ) {
         Lingua::YALI::_identify_fh($identifier, \*STDIN, $format, \@languages);
@@ -99,7 +101,7 @@ yali-language-identifier - Script for language identification
 
 =head1 VERSION
 
-version 0.010_01
+version 0.010_02
 
 =head1 SYNOPSIS
 
@@ -127,6 +129,8 @@ EXAMPLES:
  cat /etc/passwd | yali-language-identifier -i=- -l="eng ces"
 
 More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples> 
+
+Version: 0.010_02 (2012-06-29)
 
 =head1 AUTHOR
 

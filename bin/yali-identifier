@@ -14,7 +14,7 @@ use Pod::Usage;
 use Carp;
 use File::Basename;
 
-our $VERSION = '0.010_01'; # VERSION
+our $VERSION = '0.010_02'; # VERSION
 
 my $file_list = undef;
 my $input_file = undef;
@@ -33,20 +33,22 @@ if ($help) {
     pod2usage(-exitval => 0);
 }
 
+# check output format
 if ( $format ne "single" && $format ne "all" && $format ne "all_p" && $format ne "tabbed" ) {
     pod2usage(-exitval => 101, -msg => "Unsupported format $format.");
 }
 
-# 
+# reading input from STDIN is default
 if ( ! defined($input_file) && ! defined($file_list) ) {
     $input_file = "-";
 }
 
-# it is incorrect when parameter filelist and input are specified
+# it is incorrect when parameter filelist and input are both specified
 if ( defined($input_file) && defined($file_list) ) {
     pod2usage(-exitval => 101, -msg => "Options --filelist and --input can not be specified in the same time.");
 }
 
+# file list has to be specified
 if ( ! defined($classes_file) ) {
     pod2usage(-exitval => 101, -msg => "File with classes has to be specified.");
 }
@@ -78,10 +80,12 @@ while ( <$fh_classes> ) {
         warn("File $prev does not exist, using $p[1] instead.");
     }
 
+    # register class
     push(@classes, $p[0]);
     $identifier->add_class($p[0], $p[1]);
 }
 
+# identify classes
 if ( defined($input_file) ) {
     if ( $input_file eq "-" ) {
         Lingua::YALI::_identify_fh($identifier, \*STDIN, $format, \@classes);
@@ -118,7 +122,7 @@ yali-identifier - Script for language identification with custom models
 
 =head1 VERSION
 
-version 0.010_01
+version 0.010_02
 
 =head1 SYNOPSIS
 
@@ -139,7 +143,9 @@ FORMAT:
  all_p    - prints out all classes with probability sorted according to their probability descendetly
  tabbed   - prints out probabilities of classes separated by tab in order used in --classes
 
-More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples> 
+More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples>
+
+Version: 0.010_02 (2012-06-29)
 
 =head1 AUTHOR
 
