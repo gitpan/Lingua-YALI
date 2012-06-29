@@ -5,10 +5,11 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '0.010_02'; # VERSION
+our $VERSION = '0.010_03'; # VERSION
 
 
 
+# TODO: refactor - remove bzcat
 sub _open
 {
     my ($f) = @_;
@@ -48,7 +49,6 @@ sub _identify
     _print_result($result, $format, $languages);
 }
 
-
 sub _print_result
 {
     my ($result, $format, $languages) = @_;
@@ -65,6 +65,8 @@ sub _print_result
         my %res = ();
         map { $res{$_->[0]} = $_->[1] } @{$result};
         $line = join("\t", map { $res{$_} } @$languages);
+    } else {
+        croak("Unsupported format $format");
     }
     
     print $line . "\n";
@@ -81,11 +83,13 @@ Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.010_02
+version 0.010_03
 
 =head1 SYNOPSIS
 
-The YALI package contains several modules:
+The YALI package is collection of modules and tools for language identification.
+
+=head2 Modules
 
 =over
 
@@ -93,9 +97,21 @@ The YALI package contains several modules:
 
 =item * L<Lingua::YALI::LanguageIdentifier|Lingua::YALI::LanguageIdentifier> - is module for language identification capable of identifying 122 languages.
 
+=item * L<Lingua::YALI::Builder|Lingua::YALI::Builder> - is module for training custom language models.
+
 =item * L<Lingua::YALI::Identifier|Lingua::YALI::Identifier> - allows to use own models for identification.
 
-=item * It is based on published L<http://ufal.mff.cuni.cz/~majlis/yali/>.
+=back
+
+=head2 Tools
+
+=over
+
+=item * L<yali-language-identifier|Lingua::YALI::yali-language-identifier> - tool for language identification with pretrained models
+
+=item * L<yali-builder|Lingua::YALI::yali-builder> - tool for building custom language models.
+
+=item * L<yali-identifier|Lingua::YALI::yali-identifier> - tool for language identification with custom language models.
 
 =back
 
@@ -106,6 +122,8 @@ The YALI package contains several modules:
 =item * Contains pretrained models for identifying 122 languages.
 
 =item * Allows to create own models, trained on texts from specific domain, which outperforms the pretrained ones.
+
+=item * It is based on published paper L<http://ufal.mff.cuni.cz/~majlis/yali/>.
 
 =back
 

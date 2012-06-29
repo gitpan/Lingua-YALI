@@ -7,7 +7,7 @@ use Test::Command;
 use File::Basename;
 
 my $script_file = dirname(__FILE__) . "/../../bin/yali-builder";
-my $cmd_base = "perl " . $script_file;
+my $cmd_base = $^X . " " . $script_file;
 
 ok(-x $script_file);
 

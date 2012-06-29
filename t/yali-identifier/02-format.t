@@ -13,7 +13,7 @@ my $class_file = dirname(__FILE__) . "/../Identifier/classes.list";
 
 my $cmd_pref = "echo 'ahoj jak' | ";
 my $script_file = dirname(__FILE__) . "/../../bin/yali-identifier";
-my $cmd_base = "perl " . $script_file;
+my $cmd_base = $^X . " " . $script_file;
 my $cmd_suffix = " -i=- -c=$class_file";
 
 my $cmd_full = "";

@@ -13,7 +13,7 @@ use Getopt::Long;
 use Pod::Usage;
 use File::Basename;
 
-our $VERSION = '0.010_02'; # VERSION
+our $VERSION = '0.010_03'; # VERSION
 
 my $file_list = undef;
 my $input_file = undef;
@@ -101,11 +101,13 @@ yali-language-identifier - Script for language identification
 
 =head1 VERSION
 
-version 0.010_02
+version 0.010_03
 
 =head1 SYNOPSIS
 
 yali-language-identifier [options]
+
+Identify languages with pretrained models.
 
 Options:
 
@@ -130,7 +132,7 @@ EXAMPLES:
 
 More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples> 
 
-Version: 0.010_02 (2012-06-29)
+Version: 0.010_03 (2012-06-29)
 
 =head1 AUTHOR
 
