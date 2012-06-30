@@ -8,7 +8,7 @@ use Carp;
 use PerlIO::gzip;
 use Lingua::YALI;
 
-our $VERSION = '0.010_04'; # VERSION
+our $VERSION = '0.010_05'; # VERSION
 
 # hash with paths to models
 # format: { 'class1' => 'file1', 'class2' => 'file2' }
@@ -300,7 +300,7 @@ Lingua::YALI::Identifier - Module for language identification with custom models
 
 =head1 VERSION
 
-version 0.010_04
+version 0.010_05
 
 =head1 SYNOPSIS
 

@@ -20,13 +20,17 @@ exit_is_num($cmd_pref . $cmd_base . " -s=-10" . $cmd_suffix, 105);
 
 $cmd_full = $cmd_pref . $cmd_base . " -s " . $cmd_suffix;
 exit_is_num($cmd_full, 0);
-stdout_is_eq($cmd_full. " | sed -r 's/\\s+//g' | wc -l", "122\n", "there is 122 supported languages");
+stdout_is_eq($cmd_full. " | wc -l | sed -r 's/ //g' ", "122\n", "there is 122 supported languages");
 stderr_is_eq($cmd_full, "", $cmd_full);
 
 $cmd_full = $cmd_pref . $cmd_base . " --supported" . $cmd_suffix;
 exit_is_num($cmd_full, 0);
-stdout_is_eq($cmd_full . " | sed -r 's/\\s+//g' | wc -l", "122\n", "there is 122 supported languages");
+stdout_is_eq($cmd_full . " | wc -l | sed -r 's/ //g' ", "122\n", "there is 122 supported languages");
 stderr_is_eq($cmd_full, "", $cmd_full);
 
 
+
+# 
+#stdout_is_eq($cmd_full. " | wc -l | sed -r 's/\\s+//g'", "122\n", "s");
+#stdout_is_eq($cmd_full. " | wc -l | sed -r 's/ //g'", "122\n", " ");
 
