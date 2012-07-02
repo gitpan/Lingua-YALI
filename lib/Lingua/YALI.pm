@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '0.010_05'; # VERSION
+our $VERSION = '0.010_06'; # VERSION
 
 
 
@@ -83,11 +83,15 @@ Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.010_05
+version 0.010_06
 
 =head1 SYNOPSIS
 
 The YALI package is collection of modules and tools for language identification.
+
+It was developed at L<Institute of Formal and Applied Linguistics|http://ufal.mff.cuni.cz/> at Charles University in Prague.
+
+More information can be found at the L<YALI homepage|http://ufal.mff.cuni.cz/~majlis/yali/>.
 
 =head2 Modules
 
