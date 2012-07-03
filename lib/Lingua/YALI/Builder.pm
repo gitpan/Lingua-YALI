@@ -10,7 +10,7 @@ use Moose::Util::TypeConstraints;
 use List::MoreUtils qw(uniq);
 use POSIX;
 
-our $VERSION = '0.010_06'; # VERSION
+our $VERSION = '0.011'; # VERSION
 
 
 subtype 'PositiveInt',
@@ -232,7 +232,7 @@ Lingua::YALI::Builder - Constructs language models for language identification.
 
 =head1 VERSION
 
-version 0.010_06
+version 0.011
 
 =head1 SYNOPSIS
 
