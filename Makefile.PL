@@ -48,7 +48,7 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.011',
+  'VERSION' => '0.011_1',
   'test' => {
     'TESTS' => 't/*.t t/Builder/*.t t/Examples/*.t t/Identifier/*.t t/LanguageIdentifier/*.t t/yali-builder/*.t t/yali-identifier/*.t t/yali-language-identifier/*.t'
   }

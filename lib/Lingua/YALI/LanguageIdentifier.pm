@@ -8,7 +8,7 @@ use File::Glob;
 use Carp;
 use Moose;
 
-our $VERSION = '0.011'; # VERSION
+our $VERSION = '0.011_1'; # VERSION
 
 extends 'Lingua::YALI::Identifier';
 
@@ -115,7 +115,7 @@ Lingua::YALI::LanguageIdentifier - Module for language identification.
 
 =head1 VERSION
 
-version 0.011
+version 0.011_1
 
 =head1 SYNOPSIS
 
