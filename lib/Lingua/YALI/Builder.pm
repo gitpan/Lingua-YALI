@@ -10,7 +10,7 @@ use Moose::Util::TypeConstraints;
 use List::MoreUtils qw(uniq);
 use POSIX;
 
-our $VERSION = '0.012'; # VERSION
+our $VERSION = '0.013'; # VERSION
 
 
 subtype 'PositiveInt',
@@ -119,8 +119,6 @@ sub train_handle
     } elsif ( ref $fh ne "GLOB" ) {
         croak("Expected file handler but " . (ref $fh) . " was used.");
     }
-
-    my %actRes = ();
 
 #    my $padding = $self->{_padding};
     my @ngrams = @{$self->ngrams};
@@ -232,7 +230,7 @@ Lingua::YALI::Builder - Constructs language models for language identification.
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 SYNOPSIS
 

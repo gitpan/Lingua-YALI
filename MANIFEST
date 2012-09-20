@@ -137,6 +137,7 @@ share/wln.yali.gz
 share/yid.yali.gz
 share/yor.yali.gz
 share/zho.yali.gz
+t/00-compile.t
 t/00-everything_loads.t
 t/Builder/00-general.t
 t/Builder/01-new.t
@@ -184,9 +185,17 @@ t/LanguageIdentifier/ces01.txt
 t/LanguageIdentifier/eng01.txt
 t/LanguageIdentifier/files.txt
 t/author-critic.t
+t/author-test-eol.t
 t/release-cpan-changes.t
+t/release-distmeta.t
+t/release-kwalitee.t
+t/release-minimum-version.t
+t/release-mojibake.t
+t/release-no-tabs.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
+t/release-test-version.t
+t/release-unused-vars.t
 t/yali-builder/00-general.t
 t/yali-builder/01-help.t
 t/yali-builder/02-count.t

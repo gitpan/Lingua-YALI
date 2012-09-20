@@ -3,6 +3,8 @@ abstract: 'YALI - Yet Another Language Identifier.'
 author:
   - 'Martin Majlis <martin@majlis.cz>'
 build_requires:
+  File::Find: 0
+  File::Temp: 0
   Test::Command: 0
   Test::Exception: 0
   Test::More: 0
@@ -32,4 +34,4 @@ requires:
   bytes: 0
   strict: 0
   warnings: 0
-version: 0.012
+version: 0.013

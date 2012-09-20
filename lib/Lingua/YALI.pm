@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '0.012'; # VERSION
+our $VERSION = '0.013'; # VERSION
 
 
 
@@ -82,7 +82,7 @@ sub _print_result
     } else {
         croak("Unsupported format $format");
     }
-    
+
     print $line . "\n";
 }
 
@@ -97,7 +97,7 @@ Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 SYNOPSIS
 
@@ -125,11 +125,11 @@ More information can be found at the L<YALI homepage|http://ufal.mff.cuni.cz/~ma
 
 =over
 
-=item * L<yali-language-identifier|Lingua::YALI::yali-language-identifier> - tool for a language identification with pretrained models
+=item * L<yali-language-identifier|bin/yali-language-identifier> - tool for a language identification with pretrained models
 
-=item * L<yali-builder|Lingua::YALI::yali-builder> - tool for a building custom language models.
+=item * L<yali-builder|bin/yali-builder> - tool for a building custom language models.
 
-=item * L<yali-identifier|Lingua::YALI::yali-identifier> - tool for a language identification with custom language models.
+=item * L<yali-identifier|bin/yali-identifier> - tool for a language identification with custom language models.
 
 =back
 
@@ -151,10 +151,10 @@ More information can be found at the L<YALI homepage|http://ufal.mff.cuni.cz/~ma
 
 =item * L<Lingua::Lid|Lingua::Lid> can recognize 45 languages and returns only the most probable result without any weight.
 
-=item * L<Lingua::Ident|Lingua::Ident> requires training files, so it is similar to L<Lingua::YALI::LanguageIdentifier|Lingua::YALI::LanguageIdentifier>, 
+=item * L<Lingua::Ident|Lingua::Ident> requires training files, so it is similar to L<Lingua::YALI::LanguageIdentifier|Lingua::YALI::LanguageIdentifier>,
 but it does not provide any options for constructing models.
 
-=item * L<Lingua::Identify|Lingua::Identify> can recognize 33 languages but it does not allows you to use different models. 
+=item * L<Lingua::Identify|Lingua::Identify> can recognize 33 languages but it does not allows you to use different models.
 
 =back
 

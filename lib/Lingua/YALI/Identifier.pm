@@ -8,7 +8,7 @@ use Carp;
 use PerlIO::gzip;
 use Lingua::YALI;
 
-our $VERSION = '0.012'; # VERSION
+our $VERSION = '0.013'; # VERSION
 
 # hash with paths to models
 # format: { 'class1' => 'file1', 'class2' => 'file2' }
@@ -75,7 +75,7 @@ sub add_class
 
 sub remove_class
 {
-    my ( $self, $class, $file ) = @_;
+    my ( $self, $class ) = @_;
 
     if ( defined( $self->{_model_file}->{$class} ) ) {
         $self->_unload_model($class);
@@ -116,7 +116,7 @@ sub identify_string
     if ( ! defined($string) ) {
         return;
     }
-    
+
     my $result = $self->identify_handle($fh);
 
     close($fh);
@@ -127,7 +127,7 @@ sub identify_string
 
 sub identify_handle
 {
-    my ($self, $fh, $verbose) = @_;
+    my ($self, $fh) = @_;
     my %actRes = ();
 
     # parameter check
@@ -300,7 +300,7 @@ Lingua::YALI::Identifier - Module for language identification with custom models
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 SYNOPSIS
 

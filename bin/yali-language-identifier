@@ -13,7 +13,7 @@ use Getopt::Long;
 use Pod::Usage;
 use File::Basename;
 
-our $VERSION = '0.012'; # VERSION
+our $VERSION = '0.013'; # VERSION
 
 my $file_list = undef;
 my $input_file = undef;
@@ -77,12 +77,12 @@ if ( defined($input_file) ) {
 } elsif ( defined($file_list) ) {
     my $fh_list = undef;
     my $list_dir = "";
-    
+
     if ( $file_list eq "-" ) {
         $fh_list = \*STDIN;
     } else {
         open($fh_list, "<", $file_list) or croak("Not found: $file_list\n" . $!);
-        $list_dir = dirname($file_list) . "/";        
+        $list_dir = dirname($file_list) . "/";
     }
     while ( my $file = <$fh_list> ) {
         chomp $file;
@@ -103,7 +103,7 @@ yali-language-identifier - Script for language identification
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 SYNOPSIS
 
@@ -113,8 +113,9 @@ Identify languages with pretrained models.
 
 Options:
 
- -i, --input=F         input file. When F is -, read standard input. 
+ -i, --input=F         input file. When F is -, read standard input.
      --filelist=F      input files are read from F. When F is -, read them from standard input.
+ -e, --each            each line from input file is identified separately
  -f, --format=FORMAT   output FORMAT
  -l, --languages=L     ISO 639-3 codes of languages seperated by space
  -s, --supported       prints list of supported languages
@@ -132,9 +133,9 @@ EXAMPLES:
  Is file /etc/passwd written in english or czech?
  cat /etc/passwd | yali-language-identifier -i=- -l="eng ces"
 
-More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples> 
+More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples>
 
-Version: 0.012 (2012-09-20)
+Version: 0.013 (2012-09-20)
 
 =head1 AUTHOR
 

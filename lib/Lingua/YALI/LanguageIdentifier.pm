@@ -8,7 +8,7 @@ use File::Glob;
 use Carp;
 use Moose;
 
-our $VERSION = '0.012'; # VERSION
+our $VERSION = '0.013'; # VERSION
 
 extends 'Lingua::YALI::Identifier';
 
@@ -73,7 +73,7 @@ sub get_languages
 sub get_available_languages
 {
     my $self = shift;
-    
+
     # Get a module's shared files directory
     if ( ! defined($self->_languages) ) {
 
@@ -115,7 +115,7 @@ Lingua::YALI::LanguageIdentifier - Module for language identification.
 
 =head1 VERSION
 
-version 0.012
+version 0.013
 
 =head1 SYNOPSIS
 
