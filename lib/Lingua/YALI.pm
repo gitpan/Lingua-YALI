@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '0.011_1'; # VERSION
+our $VERSION = '0.012'; # VERSION
 
 
 
@@ -35,17 +35,31 @@ sub _open
     return $hdl;
 }
 
-sub _identify_fh
+sub _identify_handle
 {
-    my ($identifier, $fh, $format, $languages) = @_;
-    my $result = $identifier->identify_handle($fh);
-    _print_result($result, $format, $languages);
+    my ($identifier, $fh, $format, $languages, $each_line) = @_;
+    if ( $each_line ) {
+        while (<$fh>) {
+            chomp;
+            _identify_string($identifier, $_, $format, $languages);
+        }
+    } else {
+        my $result = $identifier->identify_handle($fh);
+        _print_result($result, $format, $languages);
+    }
 }
 
 sub _identify
 {
-    my ($identifier, $file, $format, $languages) = @_;
-    my $result = $identifier->identify_file($file);
+    my ($identifier, $file, $format, $languages, $each_line) = @_;
+    my $fh = Lingua::YALI::_open($file);
+    _identify_handle($identifier, $fh, $format, $languages, $each_line);
+}
+
+sub _identify_string
+{
+    my ($identifier, $string, $format, $languages) = @_;
+    my $result = $identifier->identify_string($string);
     _print_result($result, $format, $languages);
 }
 
@@ -83,7 +97,7 @@ Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.011_1
+version 0.012
 
 =head1 SYNOPSIS
 

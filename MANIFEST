@@ -153,9 +153,6 @@ t/Builder/sol.3.2.txt.gz
 t/Builder/sol.3.20.txt.gz
 t/Builder/sol.4.2.txt.gz
 t/Builder/sol.4.20.txt.gz
-t/Builder/tmp.2.2.txt.gz
-t/Builder/tmp.2.20.txt.gz
-t/Builder/tmp.3.20.txt.gz
 t/Examples/01-LanguageIdentifier-Synopsis.t
 t/Identifier/00-general.t
 t/Identifier/01-add_class.t
@@ -199,12 +196,16 @@ t/yali-identifier/00-general.t
 t/yali-identifier/01-help.t
 t/yali-identifier/02-format.t
 t/yali-identifier/03-classes.t
+t/yali-identifier/04-input-each_line.t
 t/yali-identifier/04-input.t
+t/yali-identifier/05-filelist-each_line.t
 t/yali-identifier/05-filelist.t
 t/yali-language-identifier/00-general.t
 t/yali-language-identifier/01-help.t
 t/yali-language-identifier/02-format.t
 t/yali-language-identifier/03-supported.t
 t/yali-language-identifier/04-languages.t
+t/yali-language-identifier/05-input-each_line.t
 t/yali-language-identifier/05-input.t
+t/yali-language-identifier/06-filelist-each_line.t
 t/yali-language-identifier/06-filelist.t
