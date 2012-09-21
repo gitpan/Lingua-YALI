@@ -8,7 +8,7 @@ use Carp;
 use PerlIO::gzip;
 use Lingua::YALI;
 
-our $VERSION = '0.013'; # VERSION
+our $VERSION = '0.014'; # VERSION
 
 # hash with paths to models
 # format: { 'class1' => 'file1', 'class2' => 'file2' }
@@ -184,23 +184,15 @@ sub identify_handle
 
     # normalize results
     my @res = ();
-    if ( $sum > 0 ) {
-        for my $l (@allLanguages) {
-            my $score = 0;
-            if ( defined($actRes{$l}) ) {
-                $score = $actRes{$l};
-            }
-            my @pair = ($l, $score / $sum);
-            push(@res, \@pair);
-        }
-    }
 
-#    print STDERR "\nX\n" . $res[0] . "\nX\n";
-#    print STDERR "\nX\n\t" . $res[0]->[0] . "\nX\n";
-#    print STDERR "\nX\n\t" . $res[0]->[1] . "\nX\n";
-#    print STDERR "\nY\n" . $res[1] . "\nY\n";
-#    print STDERR "\nY\n\t" . $res[1]->[0] . "\nY\n";
-#    print STDERR "\nY\n\t" . $res[1]->[1] . "\nY\n";
+    for my $l (@allLanguages) {
+        my $score = 0;
+        if ( defined($actRes{$l}) ) {
+            $score = $actRes{$l} / $sum;
+        }
+        my @pair = ($l, $score);
+        push(@res, \@pair);
+    }
 
     # sort according to score
     my @sortedRes = sort { $b->[1] <=> $a->[1] } @res;
@@ -300,7 +292,7 @@ Lingua::YALI::Identifier - Module for language identification with custom models
 
 =head1 VERSION
 
-version 0.013
+version 0.014
 
 =head1 SYNOPSIS
 

@@ -13,7 +13,7 @@ Lingua::YALI::Examples - Examples of usages.
 
 =head1 VERSION
 
-version 0.013
+version 0.014
 
 =head1 Introduction
 
