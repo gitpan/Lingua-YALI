@@ -8,7 +8,7 @@ use File::Glob;
 use Carp;
 use Moose;
 
-our $VERSION = '0.014'; # VERSION
+our $VERSION = '0.014_01'; # VERSION
 
 extends 'Lingua::YALI::Identifier';
 
@@ -77,7 +77,8 @@ sub get_available_languages
     # Get a module's shared files directory
     if ( ! defined($self->_languages) ) {
 
-        my $dir = File::ShareDir::dist_dir('Lingua-YALI');
+        my $dir = "share/";
+        eval { $dir = File::ShareDir::dist_dir('Lingua-YALI'); };
 
         my @languages = ();
 
@@ -107,7 +108,10 @@ sub get_available_languages
 1;
 
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -115,7 +119,7 @@ Lingua::YALI::LanguageIdentifier - Module for language identification.
 
 =head1 VERSION
 
-version 0.014
+version 0.014_01
 
 =head1 SYNOPSIS
 
@@ -479,4 +483,3 @@ This is free software, licensed under:
   The (three-clause) BSD License
 
 =cut
-

@@ -13,7 +13,7 @@ use Getopt::Long;
 use Pod::Usage;
 use File::Basename;
 
-our $VERSION = '0.014'; # VERSION
+our $VERSION = '0.014_01'; # VERSION
 
 my $file_list = undef;
 my $input_file = undef;
@@ -93,9 +93,11 @@ if ( defined($input_file) ) {
     }
 }
 
-
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -103,7 +105,7 @@ yali-language-identifier - Script for language identification
 
 =head1 VERSION
 
-version 0.014
+version 0.014_01
 
 =head1 SYNOPSIS
 
@@ -115,7 +117,6 @@ Options:
 
  -i, --input=F         input file. When F is -, read standard input.
      --filelist=F      input files are read from F. When F is -, read them from standard input.
- -e, --each            each line from input file is identified separately
  -f, --format=FORMAT   output FORMAT
  -l, --languages=L     ISO 639-3 codes of languages seperated by space
  -s, --supported       prints list of supported languages
@@ -135,7 +136,7 @@ EXAMPLES:
 
 More examples are available at L<http://search.cpan.org/perldoc?Lingua%3A%3AYALI%3A%3AExamples>
 
-Version: 0.014 (2012-09-21)
+Version: 0.014_01 (2014-05-03)
 
 =head1 AUTHOR
 
@@ -150,4 +151,3 @@ This is free software, licensed under:
   The (three-clause) BSD License
 
 =cut
-

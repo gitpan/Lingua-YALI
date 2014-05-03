@@ -1,0 +1,462 @@
+version=`cat dist.ini  | grep version | cut -f3 -d" "`; \
+	date=`date +"%Y-%m-%d"`; \
+	for file in bin/*; do \
+		sed -ri "s/^Version.*/Version: $version ($date)/" $file; \
+	done; \
+	rm -rf Lingua-*-$version*; \
+	dzil build
+[DZ] beginning to build Lingua-YALI
+[DZ] guessing dist's main_module is lib/Lingua/YALI.pm
+[DZ] extracting distribution abstract from lib/Lingua/YALI.pm
+[@Basic/ExtraTests] rewriting release test xt/release/no-tabs.t
+[@Basic/ExtraTests] rewriting author test xt/author/test-eol.t
+[@Basic/ExtraTests] rewriting release test xt/release/mojibake.t
+[@Basic/ExtraTests] rewriting release test xt/release/pod-syntax.t
+[@Basic/ExtraTests] rewriting release test xt/release/cpan-changes.t
+[@Basic/ExtraTests] rewriting author test xt/author/critic.t
+[@Basic/ExtraTests] rewriting release test xt/release/kwalitee.t
+[@Basic/ExtraTests] rewriting release test xt/release/minimum-version.t
+[@Basic/ExtraTests] rewriting release test xt/release/test-version.t
+[@Basic/ExtraTests] rewriting release test xt/release/unused-vars.t
+[@Basic/ExtraTests] rewriting release test xt/release/pod-coverage.t
+[@Basic/ExtraTests] rewriting release test xt/release/distmeta.t
+[DZ] writing Lingua-YALI in Lingua-YALI-0.014_01
+[DZ] building archive with Archive::Tar; install Archive::Tar::Wrapper 0.15 or newer for improved speed
+[DZ] writing archive to Lingua-YALI-0.014_01.tar.gz
+rm -v doc_*; \
+	dzil release;
+rm: cannot remove ‘doc_*’: No such file or directory
+[DZ] beginning to build Lingua-YALI
+[DZ] guessing dist's main_module is lib/Lingua/YALI.pm
+[DZ] extracting distribution abstract from lib/Lingua/YALI.pm
+[@Basic/ExtraTests] rewriting release test xt/release/no-tabs.t
+[@Basic/ExtraTests] rewriting release test xt/release/kwalitee.t
+[@Basic/ExtraTests] rewriting author test xt/author/critic.t
+[@Basic/ExtraTests] rewriting release test xt/release/cpan-changes.t
+[@Basic/ExtraTests] rewriting release test xt/release/pod-coverage.t
+[@Basic/ExtraTests] rewriting author test xt/author/test-eol.t
+[@Basic/ExtraTests] rewriting release test xt/release/unused-vars.t
+[@Basic/ExtraTests] rewriting release test xt/release/minimum-version.t
+[@Basic/ExtraTests] rewriting release test xt/release/test-version.t
+[@Basic/ExtraTests] rewriting release test xt/release/mojibake.t
+[@Basic/ExtraTests] rewriting release test xt/release/distmeta.t
+[@Basic/ExtraTests] rewriting release test xt/release/pod-syntax.t
+[DZ] writing Lingua-YALI in Lingua-YALI-0.014_01
+[DZ] building archive with Archive::Tar; install Archive::Tar::Wrapper 0.15 or newer for improved speed
+[DZ] writing archive to Lingua-YALI-0.014_01.tar.gz
+[@Basic/TestRelease] Extracting /home/martin/development/yali/YALI/cpan/Lingua-YALI/Lingua-YALI-0.014_01.tar.gz to .build/_nCiTunHvF
+Checking if your kit is complete...
+Looks good
+Writing Makefile for Lingua::YALI
+Writing MYMETA.yml and MYMETA.json
+make[1]: Entering directory `/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01'
+cp share/ltz.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ltz.yali.gz
+cp share/pam.yali.gz blib/lib/auto/share/dist/Lingua-YALI/pam.yali.gz
+cp share/sun.yali.gz blib/lib/auto/share/dist/Lingua-YALI/sun.yali.gz
+cp share/kan.yali.gz blib/lib/auto/share/dist/Lingua-YALI/kan.yali.gz
+cp share/fry.yali.gz blib/lib/auto/share/dist/Lingua-YALI/fry.yali.gz
+cp share/afr.yali.gz blib/lib/auto/share/dist/Lingua-YALI/afr.yali.gz
+cp share/mya.yali.gz blib/lib/auto/share/dist/Lingua-YALI/mya.yali.gz
+cp share/lat.yali.gz blib/lib/auto/share/dist/Lingua-YALI/lat.yali.gz
+cp share/guj.yali.gz blib/lib/auto/share/dist/Lingua-YALI/guj.yali.gz
+cp share/glg.yali.gz blib/lib/auto/share/dist/Lingua-YALI/glg.yali.gz
+cp share/fao.yali.gz blib/lib/auto/share/dist/Lingua-YALI/fao.yali.gz
+cp share/cat.yali.gz blib/lib/auto/share/dist/Lingua-YALI/cat.yali.gz
+cp share/pms.yali.gz blib/lib/auto/share/dist/Lingua-YALI/pms.yali.gz
+cp share/est.yali.gz blib/lib/auto/share/dist/Lingua-YALI/est.yali.gz
+cp share/bel.yali.gz blib/lib/auto/share/dist/Lingua-YALI/bel.yali.gz
+cp share/hun.yali.gz blib/lib/auto/share/dist/Lingua-YALI/hun.yali.gz
+cp share/nep.yali.gz blib/lib/auto/share/dist/Lingua-YALI/nep.yali.gz
+cp share/tat.yali.gz blib/lib/auto/share/dist/Lingua-YALI/tat.yali.gz
+cp share/gan.yali.gz blib/lib/auto/share/dist/Lingua-YALI/gan.yali.gz
+cp share/nld.yali.gz blib/lib/auto/share/dist/Lingua-YALI/nld.yali.gz
+cp share/bos.yali.gz blib/lib/auto/share/dist/Lingua-YALI/bos.yali.gz
+cp share/hin.yali.gz blib/lib/auto/share/dist/Lingua-YALI/hin.yali.gz
+cp share/hsb.yali.gz blib/lib/auto/share/dist/Lingua-YALI/hsb.yali.gz
+cp share/lit.yali.gz blib/lib/auto/share/dist/Lingua-YALI/lit.yali.gz
+cp share/sah.yali.gz blib/lib/auto/share/dist/Lingua-YALI/sah.yali.gz
+cp share/scn.yali.gz blib/lib/auto/share/dist/Lingua-YALI/scn.yali.gz
+cp share/vie.yali.gz blib/lib/auto/share/dist/Lingua-YALI/vie.yali.gz
+cp share/ita.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ita.yali.gz
+cp share/new.yali.gz blib/lib/auto/share/dist/Lingua-YALI/new.yali.gz
+cp share/mal.yali.gz blib/lib/auto/share/dist/Lingua-YALI/mal.yali.gz
+cp share/lmo.yali.gz blib/lib/auto/share/dist/Lingua-YALI/lmo.yali.gz
+cp share/cym.yali.gz blib/lib/auto/share/dist/Lingua-YALI/cym.yali.gz
+cp share/mkd.yali.gz blib/lib/auto/share/dist/Lingua-YALI/mkd.yali.gz
+cp share/kaz.yali.gz blib/lib/auto/share/dist/Lingua-YALI/kaz.yali.gz
+cp share/oss.yali.gz blib/lib/auto/share/dist/Lingua-YALI/oss.yali.gz
+cp share/swe.yali.gz blib/lib/auto/share/dist/Lingua-YALI/swe.yali.gz
+cp share/swa.yali.gz blib/lib/auto/share/dist/Lingua-YALI/swa.yali.gz
+cp share/tel.yali.gz blib/lib/auto/share/dist/Lingua-YALI/tel.yali.gz
+cp share/sqi.yali.gz blib/lib/auto/share/dist/Lingua-YALI/sqi.yali.gz
+cp share/urd.yali.gz blib/lib/auto/share/dist/Lingua-YALI/urd.yali.gz
+cp share/gle.yali.gz blib/lib/auto/share/dist/Lingua-YALI/gle.yali.gz
+cp share/tha.yali.gz blib/lib/auto/share/dist/Lingua-YALI/tha.yali.gz
+cp share/ben.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ben.yali.gz
+cp share/vol.yali.gz blib/lib/auto/share/dist/Lingua-YALI/vol.yali.gz
+cp share/yid.yali.gz blib/lib/auto/share/dist/Lingua-YALI/yid.yali.gz
+cp share/srp.yali.gz blib/lib/auto/share/dist/Lingua-YALI/srp.yali.gz
+cp share/hat.yali.gz blib/lib/auto/share/dist/Lingua-YALI/hat.yali.gz
+cp share/aze.yali.gz blib/lib/auto/share/dist/Lingua-YALI/aze.yali.gz
+cp share/ukr.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ukr.yali.gz
+cp share/glk.yali.gz blib/lib/auto/share/dist/Lingua-YALI/glk.yali.gz
+cp share/nor.yali.gz blib/lib/auto/share/dist/Lingua-YALI/nor.yali.gz
+cp share/hye.yali.gz blib/lib/auto/share/dist/Lingua-YALI/hye.yali.gz
+cp share/sco.yali.gz blib/lib/auto/share/dist/Lingua-YALI/sco.yali.gz
+cp share/heb.yali.gz blib/lib/auto/share/dist/Lingua-YALI/heb.yali.gz
+cp share/ina.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ina.yali.gz
+cp share/por.yali.gz blib/lib/auto/share/dist/Lingua-YALI/por.yali.gz
+cp share/tam.yali.gz blib/lib/auto/share/dist/Lingua-YALI/tam.yali.gz
+cp share/uzb.yali.gz blib/lib/auto/share/dist/Lingua-YALI/uzb.yali.gz
+cp share/ind.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ind.yali.gz
+cp share/ron.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ron.yali.gz
+cp share/eus.yali.gz blib/lib/auto/share/dist/Lingua-YALI/eus.yali.gz
+cp share/diq.yali.gz blib/lib/auto/share/dist/Lingua-YALI/diq.yali.gz
+cp share/kat.yali.gz blib/lib/auto/share/dist/Lingua-YALI/kat.yali.gz
+cp share/als.yali.gz blib/lib/auto/share/dist/Lingua-YALI/als.yali.gz
+cp share/tgk.yali.gz blib/lib/auto/share/dist/Lingua-YALI/tgk.yali.gz
+cp share/gla.yali.gz blib/lib/auto/share/dist/Lingua-YALI/gla.yali.gz
+cp share/nap.yali.gz blib/lib/auto/share/dist/Lingua-YALI/nap.yali.gz
+cp share/pol.yali.gz blib/lib/auto/share/dist/Lingua-YALI/pol.yali.gz
+cp share/bre.yali.gz blib/lib/auto/share/dist/Lingua-YALI/bre.yali.gz
+cp share/arz.yali.gz blib/lib/auto/share/dist/Lingua-YALI/arz.yali.gz
+cp share/zho.yali.gz blib/lib/auto/share/dist/Lingua-YALI/zho.yali.gz
+cp share/pnb.yali.gz blib/lib/auto/share/dist/Lingua-YALI/pnb.yali.gz
+cp share/spa.yali.gz blib/lib/auto/share/dist/Lingua-YALI/spa.yali.gz
+cp share/dan.yali.gz blib/lib/auto/share/dist/Lingua-YALI/dan.yali.gz
+cp share/oci.yali.gz blib/lib/auto/share/dist/Lingua-YALI/oci.yali.gz
+cp share/tgl.yali.gz blib/lib/auto/share/dist/Lingua-YALI/tgl.yali.gz
+cp share/mlg.yali.gz blib/lib/auto/share/dist/Lingua-YALI/mlg.yali.gz
+cp share/jpn.yali.gz blib/lib/auto/share/dist/Lingua-YALI/jpn.yali.gz
+cp share/mar.yali.gz blib/lib/auto/share/dist/Lingua-YALI/mar.yali.gz
+cp share/mon.yali.gz blib/lib/auto/share/dist/Lingua-YALI/mon.yali.gz
+cp share/fra.yali.gz blib/lib/auto/share/dist/Lingua-YALI/fra.yali.gz
+cp share/tur.yali.gz blib/lib/auto/share/dist/Lingua-YALI/tur.yali.gz
+cp share/ast.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ast.yali.gz
+cp share/ces.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ces.yali.gz
+cp share/eng.yali.gz blib/lib/auto/share/dist/Lingua-YALI/eng.yali.gz
+cp share/bpy.yali.gz blib/lib/auto/share/dist/Lingua-YALI/bpy.yali.gz
+cp share/bug.yali.gz blib/lib/auto/share/dist/Lingua-YALI/bug.yali.gz
+cp share/wln.yali.gz blib/lib/auto/share/dist/Lingua-YALI/wln.yali.gz
+cp share/vec.yali.gz blib/lib/auto/share/dist/Lingua-YALI/vec.yali.gz
+cp share/mri.yali.gz blib/lib/auto/share/dist/Lingua-YALI/mri.yali.gz
+cp share/bcl.yali.gz blib/lib/auto/share/dist/Lingua-YALI/bcl.yali.gz
+cp share/ido.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ido.yali.gz
+cp share/epo.yali.gz blib/lib/auto/share/dist/Lingua-YALI/epo.yali.gz
+cp share/nno.yali.gz blib/lib/auto/share/dist/Lingua-YALI/nno.yali.gz
+cp share/deu.yali.gz blib/lib/auto/share/dist/Lingua-YALI/deu.yali.gz
+cp share/yor.yali.gz blib/lib/auto/share/dist/Lingua-YALI/yor.yali.gz
+cp share/lav.yali.gz blib/lib/auto/share/dist/Lingua-YALI/lav.yali.gz
+cp share/ell.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ell.yali.gz
+cp share/chv.yali.gz blib/lib/auto/share/dist/Lingua-YALI/chv.yali.gz
+cp share/kor.yali.gz blib/lib/auto/share/dist/Lingua-YALI/kor.yali.gz
+cp share/hif.yali.gz blib/lib/auto/share/dist/Lingua-YALI/hif.yali.gz
+cp share/fin.yali.gz blib/lib/auto/share/dist/Lingua-YALI/fin.yali.gz
+cp share/isl.yali.gz blib/lib/auto/share/dist/Lingua-YALI/isl.yali.gz
+cp share/arg.yali.gz blib/lib/auto/share/dist/Lingua-YALI/arg.yali.gz
+cp share/hbs.yali.gz blib/lib/auto/share/dist/Lingua-YALI/hbs.yali.gz
+cp share/kur.yali.gz blib/lib/auto/share/dist/Lingua-YALI/kur.yali.gz
+cp share/lim.yali.gz blib/lib/auto/share/dist/Lingua-YALI/lim.yali.gz
+cp share/rus.yali.gz blib/lib/auto/share/dist/Lingua-YALI/rus.yali.gz
+cp share/nds.yali.gz blib/lib/auto/share/dist/Lingua-YALI/nds.yali.gz
+cp share/war.yali.gz blib/lib/auto/share/dist/Lingua-YALI/war.yali.gz
+cp share/hrv.yali.gz blib/lib/auto/share/dist/Lingua-YALI/hrv.yali.gz
+cp share/cos.yali.gz blib/lib/auto/share/dist/Lingua-YALI/cos.yali.gz
+cp share/slv.yali.gz blib/lib/auto/share/dist/Lingua-YALI/slv.yali.gz
+cp share/fas.yali.gz blib/lib/auto/share/dist/Lingua-YALI/fas.yali.gz
+cp share/slk.yali.gz blib/lib/auto/share/dist/Lingua-YALI/slk.yali.gz
+cp share/jav.yali.gz blib/lib/auto/share/dist/Lingua-YALI/jav.yali.gz
+cp share/ceb.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ceb.yali.gz
+cp share/ara.yali.gz blib/lib/auto/share/dist/Lingua-YALI/ara.yali.gz
+cp share/que.yali.gz blib/lib/auto/share/dist/Lingua-YALI/que.yali.gz
+cp share/bul.yali.gz blib/lib/auto/share/dist/Lingua-YALI/bul.yali.gz
+cp share/msa.yali.gz blib/lib/auto/share/dist/Lingua-YALI/msa.yali.gz
+cp share/amh.yali.gz blib/lib/auto/share/dist/Lingua-YALI/amh.yali.gz
+cp lib/Lingua/YALI/Builder.pm blib/lib/Lingua/YALI/Builder.pm
+cp lib/Lingua/YALI/LanguageIdentifier.pm blib/lib/Lingua/YALI/LanguageIdentifier.pm
+cp lib/Lingua/YALI.pm blib/lib/Lingua/YALI.pm
+cp lib/Lingua/YALI/Examples.pod blib/lib/Lingua/YALI/Examples.pod
+cp lib/Lingua/YALI/Identifier.pm blib/lib/Lingua/YALI/Identifier.pm
+cp bin/yali-builder blib/script/yali-builder
+/usr/bin/perl -MExtUtils::MY -e 'MY->fixin(shift)' -- blib/script/yali-builder
+cp bin/yali-identifier blib/script/yali-identifier
+/usr/bin/perl -MExtUtils::MY -e 'MY->fixin(shift)' -- blib/script/yali-identifier
+cp bin/yali-language-identifier blib/script/yali-language-identifier
+/usr/bin/perl -MExtUtils::MY -e 'MY->fixin(shift)' -- blib/script/yali-language-identifier
+Manifying blib/man1/yali-language-identifier.1p
+Manifying blib/man1/yali-identifier.1p
+Manifying blib/man1/yali-builder.1p
+Manifying blib/man3/Lingua::YALI::Examples.3pm
+Manifying blib/man3/Lingua::YALI.3pm
+Manifying blib/man3/Lingua::YALI::Identifier.3pm
+Manifying blib/man3/Lingua::YALI::LanguageIdentifier.3pm
+Manifying blib/man3/Lingua::YALI::Builder.3pm
+make[1]: Leaving directory `/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01'
+make[1]: Entering directory `/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01'
+Skip blib/lib/auto/share/dist/Lingua-YALI/lat.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/hun.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/pam.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/hsb.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/oss.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/cym.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/hin.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/mya.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/sah.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/est.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/glg.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/fry.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/guj.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/nld.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/tat.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/vie.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/bel.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/scn.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/cat.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/gan.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/swa.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/lmo.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/swe.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/sun.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/kaz.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/pms.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ita.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/lit.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/mal.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/afr.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/kan.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/mkd.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/fao.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ltz.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/bos.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/new.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/nep.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/sco.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/urd.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/bre.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/eus.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/yid.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/arz.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/nap.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ron.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/zho.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/tgk.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/pol.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/aze.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ben.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/pnb.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ind.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/sqi.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/spa.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/tam.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/kat.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/tel.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/dan.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/nor.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/hat.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/vol.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/por.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/srp.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ina.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ukr.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/heb.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/uzb.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/als.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/tha.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/diq.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/hye.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/glk.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/gle.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/gla.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/nds.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/hrv.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/bcl.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/eng.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/isl.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/tur.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/war.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/oci.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ell.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/mlg.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/mar.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/wln.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/nno.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/hbs.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/epo.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/kur.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ido.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/lim.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/fra.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/bug.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/lav.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/tgl.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/vec.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ces.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/kor.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/chv.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/arg.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/fin.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/mri.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/mon.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/bpy.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/yor.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/jpn.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/deu.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/rus.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ast.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/hif.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ceb.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/slv.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/ara.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/fas.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/bul.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/jav.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/que.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/msa.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/slk.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/amh.yali.gz (unchanged)
+Skip blib/lib/auto/share/dist/Lingua-YALI/cos.yali.gz (unchanged)
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t t/Builder/*.t t/Examples/*.t t/Identifier/*.t t/LanguageIdentifier/*.t t/yali-builder/*.t t/yali-identifier/*.t t/yali-language-identifier/*.t
+t/00-compile.t ...................................... ok
+t/00-everything_loads.t ............................. ok
+t/author-critic.t ................................... ok
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/t/LanguageIdentifier/03-get_languages.t' on line 26: [\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 26: [\s] : my[\s]$l3[\s]=[\s]$identifier->get_languages();[\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/bin/yali-builder' on line 111: [\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 111: [\s] : [\s][\s][\s][\s][\s]--filelist=F[\s][\s][\s][\s][\s][\s]input[\s]files[\s]are[\s]read[\s]from[\s]F.[\s]When[\s]F[\s]is[\s]-,[\s]read[\s]them[\s]from[\s]standard[\s]input.[\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/bin/yali-identifier' on line 66: [\s][\s][\s][\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 66: [\s][\s][\s][\s] : [\s][\s][\s][\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/bin/yali-language-identifier' on line 80: [\s][\s][\s][\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 80: [\s][\s][\s][\s] : [\s][\s][\s][\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/lib/Lingua/YALI/Builder.pm' on line 208: [\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 208: [\s] : [\s][\s][\s][\s]for[\s]my[\s]$k[\s](sort[\s]{[\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/lib/Lingua/YALI/LanguageIdentifier.pm' on line 76: [\s][\s][\s][\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 76: [\s][\s][\s][\s] : [\s][\s][\s][\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/blib/lib/Lingua/YALI/Builder.pm' on line 208: [\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 208: [\s] : [\s][\s][\s][\s]for[\s]my[\s]$k[\s](sort[\s]{[\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/blib/lib/Lingua/YALI/LanguageIdentifier.pm' on line 76: [\s][\s][\s][\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 76: [\s][\s][\s][\s] : [\s][\s][\s][\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/blib/script/yali-builder' on line 111: [\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 111: [\s] : [\s][\s][\s][\s][\s]--filelist=F[\s][\s][\s][\s][\s][\s]input[\s]files[\s]are[\s]read[\s]from[\s]F.[\s]When[\s]F[\s]is[\s]-,[\s]read[\s]them[\s]from[\s]standard[\s]input.[\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/blib/script/yali-identifier' on line 66: [\s][\s][\s][\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 66: [\s][\s][\s][\s] : [\s][\s][\s][\s]
+
+#   Failed test 'No incorrect line endings in '/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/blib/script/yali-language-identifier' on line 80: [\s][\s][\s][\s] '
+#   at /usr/local/share/perl/5.18.2/Test/EOL.pm line 144.
+#   Problem Lines: 
+# line 80: [\s][\s][\s][\s] : [\s][\s][\s][\s]
+# Looks like you failed 11 tests of 78.
+t/author-test-eol.t ................................. 
+Dubious, test returned 11 (wstat 2816, 0xb00)
+Failed 11/78 subtests 
+t/Builder/00-general.t .............................. ok
+t/Builder/01-new.t .................................. ok
+t/Builder/02-train_file.t ........................... ok
+Filehandle $fh_w opened only for output at /home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01/blib/lib/Lingua/YALI/Builder.pm line 131.
+t/Builder/03-train_handler.t ........................ ok
+t/Builder/04-train_string.t ......................... ok
+t/Builder/05-store_with_train_file.t ................ ok
+t/Builder/06-store_with_train_handle.t .............. ok
+t/Builder/07-store_with_train_string.t .............. ok
+t/Builder/08-store_with_wrong_parameters.t .......... ok
+t/Examples/01-LanguageIdentifier-Synopsis.t ......... ok
+t/Identifier/00-general.t ........................... ok
+t/Identifier/01-add_class.t ......................... ok
+t/Identifier/02-remove_class.t ...................... ok
+t/Identifier/03-get_classes.t ....................... ok
+t/Identifier/04-identify_file.t ..................... ok
+t/Identifier/05-identify_handle.t ................... ok
+t/Identifier/06-identify_string.t ................... ok
+t/Identifier/07-manipulation_with_classes.t ......... ok
+t/Identifier/08-manipulation_and_identification.t ... ok
+t/LanguageIdentifier/00-general.t ................... ok
+t/LanguageIdentifier/00-get_available_languages.t ... ok
+t/LanguageIdentifier/01-add_language.t .............. ok
+t/LanguageIdentifier/02-remove_language.t ........... ok
+t/LanguageIdentifier/03-get_languages.t ............. ok
+t/LanguageIdentifier/04-identify_file.t ............. ok
+t/LanguageIdentifier/05-identify_handle.t ........... ok
+t/LanguageIdentifier/06-identify_string.t ........... ok
+t/release-cpan-changes.t ............................ ok
+t/release-distmeta.t ................................ ok
+t/release-kwalitee.t ................................ ok
+t/release-minimum-version.t ......................... skipped: no minimum perl version could be determined
+t/release-mojibake.t ................................ ok
+
+#   Failed test 'No tabs in 't/Identifier/classes.list' on line 1'
+#   at t/release-no-tabs.t line 114.
+# Looks like you failed 1 test of 94.
+t/release-no-tabs.t ................................. 
+Dubious, test returned 1 (wstat 256, 0x100)
+Failed 1/94 subtests 
+t/release-pod-coverage.t ............................ ok
+t/release-pod-syntax.t .............................. ok
+t/release-test-version.t ............................ ok
+t/release-unused-vars.t ............................. ok
+t/yali-builder/00-general.t ......................... ok
+t/yali-builder/01-help.t ............................ ok
+t/yali-builder/02-count.t ........................... ok
+t/yali-builder/03-ngram.t ........................... ok
+t/yali-builder/04-train.t ........................... ok
+t/yali-identifier/00-general.t ...................... ok
+t/yali-identifier/01-help.t ......................... ok
+t/yali-identifier/02-format.t ....................... ok
+t/yali-identifier/03-classes.t ...................... ok
+t/yali-identifier/04-input-each_line.t .............. ok
+t/yali-identifier/04-input.t ........................ ok
+t/yali-identifier/05-filelist-each_line.t ........... ok
+t/yali-identifier/05-filelist.t ..................... ok
+t/yali-language-identifier/00-general.t ............. ok
+t/yali-language-identifier/01-help.t ................ ok
+t/yali-language-identifier/02-format.t .............. ok
+t/yali-language-identifier/03-supported.t ........... ok
+t/yali-language-identifier/04-languages.t ........... ok
+t/yali-language-identifier/05-input-each_line.t ..... ok
+t/yali-language-identifier/05-input.t ............... ok
+t/yali-language-identifier/06-filelist-each_line.t .. ok
+t/yali-language-identifier/06-filelist.t ............ ok
+
+Test Summary Report
+-------------------
+t/author-test-eol.t                               (Wstat: 2816 Tests: 78 Failed: 11)
+  Failed tests:  49, 65-67, 69, 71, 73-74, 76-78
+  Non-zero exit status: 11
+t/release-no-tabs.t                               (Wstat: 256 Tests: 94 Failed: 1)
+  Failed test:  41
+  Non-zero exit status: 1
+Files=63, Tests=701, 76 wallclock secs ( 0.48 usr  0.09 sys + 69.50 cusr  5.63 csys = 75.70 CPU)
+Result: FAIL
+Failed 2/63 test programs. 12/701 subtests failed.
+make[1]: *** [test_dynamic] Error 255
+make[1]: Leaving directory `/home/martin/development/yali/YALI/cpan/Lingua-YALI/.build/_nCiTunHvF/Lingua-YALI-0.014_01'
+error running make test
+make: *** [release] Error 2

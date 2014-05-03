@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '0.014'; # VERSION
+our $VERSION = '0.014_01'; # VERSION
 
 
 
@@ -89,7 +89,10 @@ sub _print_result
 1;
 
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -97,7 +100,7 @@ Lingua::YALI - YALI - Yet Another Language Identifier.
 
 =head1 VERSION
 
-version 0.014
+version 0.014_01
 
 =head1 SYNOPSIS
 
@@ -170,5 +173,16 @@ This is free software, licensed under:
 
   The (three-clause) BSD License
 
-=cut
+=head1 AUTHOR
 
+Martin Majlis <martin@majlis.cz>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2012 by Martin Majlis.
+
+This is free software, licensed under:
+
+  The (three-clause) BSD License
+
+=cut

@@ -8,7 +8,7 @@ use Carp;
 use PerlIO::gzip;
 use Lingua::YALI;
 
-our $VERSION = '0.014'; # VERSION
+our $VERSION = '0.014_01'; # VERSION
 
 # hash with paths to models
 # format: { 'class1' => 'file1', 'class2' => 'file2' }
@@ -284,7 +284,10 @@ sub _unload_model
 1;
 
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -292,7 +295,7 @@ Lingua::YALI::Identifier - Module for language identification with custom models
 
 =head1 VERSION
 
-version 0.014
+version 0.014_01
 
 =head1 SYNOPSIS
 
@@ -440,5 +443,16 @@ This is free software, licensed under:
 
   The (three-clause) BSD License
 
-=cut
+=head1 AUTHOR
 
+Martin Majlis <martin@majlis.cz>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2012 by Martin Majlis.
+
+This is free software, licensed under:
+
+  The (three-clause) BSD License
+
+=cut

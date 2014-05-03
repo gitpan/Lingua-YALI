@@ -1,0 +1,28 @@
+version=`cat dist.ini  | grep version | cut -f3 -d" "`; \
+	date=`date +"%Y-%m-%d"`; \
+	for file in bin/*; do \
+		sed -ri "s/^Version.*/Version: $version ($date)/" $file; \
+	done; \
+	rm -rf Lingua-*-$version*; \
+	find . -name '*~' -exec rm {} \; ; \
+	dzil build
+[DZ] beginning to build Lingua-YALI
+[DZ] guessing dist's main_module is lib/Lingua/YALI.pm
+[DZ] extracting distribution abstract from lib/Lingua/YALI.pm
+[@Basic/ExtraTests] rewriting author test xt/author/critic.t
+[@Basic/ExtraTests] rewriting release test xt/release/pod-coverage.t
+[@Basic/ExtraTests] rewriting release test xt/release/cpan-changes.t
+[@Basic/ExtraTests] rewriting release test xt/release/pod-syntax.t
+[@Basic/ExtraTests] rewriting release test xt/release/distmeta.t
+[@Basic/ExtraTests] rewriting author test xt/author/test-eol.t
+[@Basic/ExtraTests] rewriting release test xt/release/kwalitee.t
+[@Basic/ExtraTests] rewriting release test xt/release/test-version.t
+[@Basic/ExtraTests] rewriting release test xt/release/minimum-version.t
+[@Basic/ExtraTests] rewriting release test xt/release/unused-vars.t
+[@Basic/ExtraTests] rewriting release test xt/release/mojibake.t
+[DZ] writing Lingua-YALI in Lingua-YALI-0.014_01
+[DZ] building archive with Archive::Tar; install Archive::Tar::Wrapper 0.15 or newer for improved speed
+[DZ] writing archive to Lingua-YALI-0.014_01.tar.gz
+rm -v doc_*; \
+	dzil release;
+rm: cannot remove ‘doc_*’: No such file or directory
