@@ -52,7 +52,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Time::HiRes" => 0
   },
-  "VERSION" => "0.014_01",
+  "VERSION" => "0.015",
   "test" => {
     "TESTS" => "t/*.t t/Builder/*.t t/Examples/*.t t/Identifier/*.t t/LanguageIdentifier/*.t t/yali-builder/*.t t/yali-identifier/*.t t/yali-language-identifier/*.t"
   }

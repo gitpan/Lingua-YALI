@@ -14,10 +14,6 @@ lib/Lingua/YALI/Builder.pm
 lib/Lingua/YALI/Examples.pod
 lib/Lingua/YALI/Identifier.pm
 lib/Lingua/YALI/LanguageIdentifier.pm
-out.log
-out2.log
-out3.log
-out4.log
 pod2htmd.tmp
 share/afr.yali.gz
 share/als.yali.gz
